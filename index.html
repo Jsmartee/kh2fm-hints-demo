@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KH2FMR Hints</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+
+    <header>KH2FM Randomizer Hints Demo</header>
+
+    <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+
+    <button id="gen" type="button" onclick="generate()">Generate Hints</button>
+
+    <p>Select a spoiler log and click the Generate Hints button. The spoiler log needs to be a csv file.</p>
+    <p id="confirm"></p>
+
+    <div id="table">
+        <table>
+            <tr>
+                <td>
+                    <button id="1" onclick="reveal(this.id)">Report 1</button>
+                </td>
+                <td>
+                    <p id="report-1">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="2" onclick="reveal(this.id)">Report 2</button>
+                </td>
+                <td>
+                    <p id="report-2">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="3" onclick="reveal(this.id)">Report 3</button>
+                </td>
+                <td>
+                    <p id="report-3">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="4" onclick="reveal(this.id)">Report 4</button>
+                </td>
+                <td>
+                    <p id="report-4">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="5" onclick="reveal(this.id)">Report 5</button>
+                </td>
+                <td>
+                    <p id="report-5">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="6" onclick="reveal(this.id)">Report 6</button>
+                </td>
+                <td>
+                    <p id="report-6">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="7" onclick="reveal(this.id)">Report 7</button>
+                </td>
+                <td>
+                    <p id="report-7">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="8" onclick="reveal(this.id)">Report 8</button>
+                </td>
+                <td>
+                    <p id="report-8">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="9" onclick="reveal(this.id)">Report 9</button>
+                </td>
+                <td>
+                    <p id="report-9">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="10" onclick="reveal(this.id)">Report 10</button>
+                </td>
+                <td>
+                    <p id="report-10">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="11" onclick="reveal(this.id)">Report 11</button>
+                </td>
+                <td>
+                    <p id="report-11">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="12" onclick="reveal(this.id)">Report 12</button>
+                </td>
+                <td>
+                    <p id="report-12">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="13" onclick="reveal(this.id)">Report 13</button>
+                </td>
+                <td>
+                    <p id="report-13">Click to reveal hint</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <textarea id="notes" placeholder="Notes" rows="20" cols="50"></textarea>
+    </div>
+
+    <footer>
+        <p>Last updated: 8/7/20</p>
+    </footer>
+    
+</body>
+</html>
