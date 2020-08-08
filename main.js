@@ -55,7 +55,7 @@ var hints = [];
   
 function generate() {
     if(dataArray.length === 0) {
-        document.getElementById('confirm').innerHTML = "Please select a spoiler log to generate hints.";
+        document.getElementById('confirm').innerHTML = "Please select a seed to generate hints.";
     }
     else {
         document.getElementById('gen').style.backgroundColor = "green";
@@ -90,7 +90,7 @@ function getLists() {
 
 function reveal(id) {
     if(dataArray.length === 0) {
-        document.getElementById('report-' + id).innerHTML = "Please select a spoiler log to generate hints.";
+        document.getElementById('report-' + id).innerHTML = "Please select a seed to generate hints.";
     }
     else {
         var text = document.getElementById('report-' + id);
