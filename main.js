@@ -59,7 +59,11 @@ function generate() {
     }
     else {
         document.getElementById('gen').style.backgroundColor = "green";
+        document.getElementById('gen').disabled = true;
         document.getElementById('confirm').innerHTML = "Hints have been generated! Refresh to play again.";
+        document.getElementById('Simulated Twilight Town').disabled = true;
+        document.getElementById('100 Acre Wood').disabled = true;
+        document.getElementById('Atlantica').disabled = true;
         for(var i = 1; i < 14; i++) {
             document.getElementById('report-' + i).innerHTML = "Click to reveal hint";
         }
@@ -104,11 +108,9 @@ Spikevegeta's Hint System
 Hint tells how many important checks in a world.
 */
 
-//Promise Charm "020C"
-
 var keyItems = [
-    //Proofs
-    "00000251", "00000252", "00000253",
+    //Proofs and Promise Charm
+    "00000251", "00000252", "00000253", "0000020C",
 
     //Drive Forms
     "0000001A", "0000001B", "00000233", "0000001F", "0000001D",
@@ -206,25 +208,6 @@ function createHints() {
 
     var LU = createWorldList(Levels);
     var LUnumber = numberOfChecks(LU);
-
-    var allworlds = [
-        "100 Acre Wood", 
-        "Simulated Twilight Town", 
-        "Twilight Town", 
-        "Hollow Bastion", 
-        "Beast's Castle", 
-        "Olympus Coliseum", 
-        "Agrabah", 
-        "Land of Dragons", 
-        "Pride Lands",
-        "Disney Castle", 
-        "Halloween Town", 
-        "Port Royal", 
-        "Space Paranoids", 
-        "The World That Never Was", 
-        "Drive Forms", 
-        "Sora's Heart"
-    ];
     
     var worldChecks = {
         "100 Acre Wood" : AWnumber,
@@ -252,6 +235,39 @@ function createHints() {
     }
 
 }
+
+//Remove world from list of possible hints
+function exclude(id) {
+    if(document.getElementById(id).checked) {
+        for(var i = 0; i < allworlds.length; i++) {
+            if(allworlds[i] === id) {
+                allworlds.splice(i, 1);
+            }
+        }
+    }
+    else {
+        allworlds.push(id);
+    }
+}
+
+var allworlds = [
+    "100 Acre Wood", 
+    "Simulated Twilight Town", 
+    "Twilight Town", 
+    "Hollow Bastion", 
+    "Beast's Castle", 
+    "Olympus Coliseum", 
+    "Agrabah", 
+    "Land of Dragons", 
+    "Pride Lands",
+    "Disney Castle", 
+    "Halloween Town", 
+    "Port Royal", 
+    "Space Paranoids", 
+    "The World That Never Was", 
+    "Drive Forms", 
+    "Sora's Heart"
+];
 
 var SimulatedTwilightTown = [
     "11CE016E",
