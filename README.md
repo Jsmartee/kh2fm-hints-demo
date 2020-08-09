@@ -11,3 +11,9 @@ Important Checks:
 * Magic (18 total)
 * 5 Torn Pages
 * 13 Ansem Reports
+
+Other notes:
+* Disney Castle and Timeless River are combined into "Disney Castle"
+* Cavern of Remembrance is considered part of "Hollow Bastion"
+* Sora's Heart refers to level ups (level up checks only go up to 50 right now)
+* Absent Silhouettes and Data Org members are included in their respective worlds
