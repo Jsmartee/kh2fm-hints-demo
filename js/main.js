@@ -53,6 +53,8 @@ var rewardList = [];
   
 var hints = [];
 var savedhints = [];
+
+var seed;
   
 function generate() {
     if(dataArray.length === 0) {
@@ -70,6 +72,8 @@ function generate() {
         }
         getLists();
         createHints();
+        var seedName = dataArray[0].toString().split('');
+        seed = seedName[3].concat(seedName[4], seedName[5], seedName[6]);
     }
 }
 
@@ -78,7 +82,7 @@ function save() {
         savedhints.push(hints[i].concat(','));
     }
     var blob = new Blob(savedhints, {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "kh2fm-hints.txt");
+    saveAs(blob, "kh2fm-hints-" + seed + ".txt");
 }
 
 function uploadHints() {
@@ -87,7 +91,6 @@ function uploadHints() {
     for(var i = 0; i < row.length; i++) {
         hints.push(row[i]);
     }
-    console.log(row);
     document.getElementById('upload-btn').style.backgroundColor = "green";
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
