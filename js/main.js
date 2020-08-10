@@ -52,6 +52,7 @@ var locationList = [];
 var rewardList = [];
   
 var hints = [];
+var savedhints = [];
   
 function generate() {
     if(dataArray.length === 0) {
@@ -72,6 +73,33 @@ function generate() {
     }
 }
 
+function save() {
+    for(var i = 0; i < hints.length; i++) {
+        savedhints.push(hints[i].concat(','));
+    }
+    var blob = new Blob(savedhints, {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "kh2fm-hints.txt");
+}
+
+function uploadHints() {
+    var row = dataArray[0].toString().split(',');
+    row.pop();
+    for(var i = 0; i < row.length; i++) {
+        hints.push(row[i]);
+    }
+    console.log(row);
+    document.getElementById('upload-btn').style.backgroundColor = "green";
+    document.getElementById('upload-btn').disabled = true;
+    document.getElementById('gen').disabled = true;
+    document.getElementById('confirm').innerHTML = "Hints have been uploaded! Refresh to play again.";
+    document.getElementById('Simulated Twilight Town').disabled = true;
+    document.getElementById('100 Acre Wood').disabled = true;
+    document.getElementById('Atlantica').disabled = true;
+    for(var i = 1; i < 14; i++) {
+        document.getElementById('report-' + i).innerHTML = "Click to reveal hint";
+    }
+}
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * i);
@@ -82,7 +110,7 @@ function shuffle(array) {
     return array;
 }
   
-//Create location, reward, and description lists
+//Create location and reward lists
 function getLists() {
     for(var i = 0; i < dataArray.length; i++) {
       var item = dataArray[i].toString();

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KH2FMR Hints</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/FileSaver.js"></script>
 </head>
 <body>
 
@@ -38,7 +39,21 @@
         </table>
     </div>
 
+    <hr>
+
+    <p>If you're playing the same seed with other people and want the same hints, click the "Save Hints" button. This will save the hints as a text file that you can send to the other players.</p>
+    <button id="save-btn" onclick="save()">Save Hints</button>
+    <br>
+    <p>Select the hints text file that was sent to you and click "Upload Hints" to get the same hints as the person who generated them.</p>
+    <input type="file" id="textFileInput" onchange="handleFiles(this.files)" accept=".txt">
+    <button id="upload-btn" onclick="uploadHints()">Upload Hints</button>
+    <br>
+
+    <hr>
+
     <p id="confirm"></p>
+
+    <hr>
 
     <div id="table">
         <table>
@@ -150,7 +165,7 @@
     </div>
 
     <footer>
-        <p>Last updated: 8/9/20</p>
+        <p>Last updated: 8/10/20</p>
     </footer>
     
 </body>
