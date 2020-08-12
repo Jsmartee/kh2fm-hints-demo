@@ -159,6 +159,10 @@ var keyItems = [
     "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE"
 ];
 
+var proofs = [
+    "00000251", "00000252", "00000253"
+];
+
 //Create list of rewards from world
 function createWorldList(world) {
     var checks = [];
@@ -181,6 +185,28 @@ function numberOfChecks(world) {
     return number;
 }
 
+var proofLocations = [];
+
+//See if world/location has a proof
+function getProofs(world) {
+    var proof = false;
+    for(var i = 0; i < world.length; i++) {
+        if(world.includes(proofs[0]) || world.includes(proofs[1]) || world.includes(proofs[2])) {
+            proof = true;
+        }
+    }
+    console.log(proof);
+    return proof;
+}
+
+function sortWorldLists(proof, worldName) {
+    if(proof) {
+        proofLocations.push(worldName);
+        var index = allworlds.indexOf(worldName);
+        allworlds.splice(index, 1);
+    }
+}
+
 function writeHint(world, number) {
     if(number === 1) {
         var hint = world + " has " + number + " important check.";
@@ -193,55 +219,93 @@ function writeHint(world, number) {
 
 function createHints() {
     var AW = createWorldList(AcreWood);
+    var AWproof = getProofs(AW);
+    sortWorldLists(AWproof, "100 Acre Wood");
     var AWnumber = numberOfChecks(AW);
 
+    var AT = createWorldList(Atlantica);
+    var ATproof = getProofs(AT);
+    sortWorldLists(ATproof, "Atlantica");
+    var ATnumber = numberOfChecks(AT);
+
     var STT = createWorldList(SimulatedTwilightTown);
+    var STTproof = getProofs(STT);
+    sortWorldLists(STTproof, "Simulated Twilight Town");
     var STTnumber = numberOfChecks(STT);
 
     var TT = createWorldList(TwilightTown);
+    var TTproof = getProofs(TT);
+    sortWorldLists(TTproof, "Twilight Town");
     var TTnumber = numberOfChecks(TT);
 
     var HB = createWorldList(HollowBastion);
+    var HBproof = getProofs(HB);
+    sortWorldLists(HBproof, "Hollow Bastion");
     var HBnumber = numberOfChecks(HB);
 
     var BC = createWorldList(BeastsCastle);
+    var BCproof = getProofs(BC);
+    sortWorldLists(BCproof, "Beast's Castle");
     var BCnumber = numberOfChecks(BC);
 
     var OC = createWorldList(OlympusColiseum);
+    var OCproof = getProofs(OC);
+    sortWorldLists(OCproof, "Olympus Coliseum");
     var OCnumber = numberOfChecks(OC);
 
     var AG = createWorldList(Agrabah);
+    var AGproof = getProofs(AG);
+    sortWorldLists(AGproof, "Agrabah");
     var AGnumber = numberOfChecks(AG);
 
     var LOD = createWorldList(LandOfDragons);
+    var LODproof = getProofs(LOD);
+    sortWorldLists(LODproof, "Land of Dragons");
     var LODnumber = numberOfChecks(LOD);
 
     var PL = createWorldList(PrideLands);
+    var PLproof = getProofs(PL);
+    sortWorldLists(PLproof, "Pride Lands");
     var PLnumber = numberOfChecks(PL);
 
     var DC = createWorldList(DisneyCastle);
+    var DCproof = getProofs(DC);
+    sortWorldLists(DCproof, "Disney Castle");
     var DCnumber = numberOfChecks(DC);
 
     var HT = createWorldList(HalloweenTown);
+    var HTproof = getProofs(HT);
+    sortWorldLists(HTproof, "Halloween Town");
     var HTnumber = numberOfChecks(HT);
 
     var PR = createWorldList(PortRoyal);
+    var PRproof = getProofs(PR);
+    sortWorldLists(PRproof, "Port Royal");
     var PRnumber = numberOfChecks(PR);
 
     var SP = createWorldList(SpaceParanoids);
+    var SPproof = getProofs(SP);
+    sortWorldLists(SPproof, "Space Paranoids");
     var SPnumber = numberOfChecks(SP);
 
     var TWTNW = createWorldList(TheWorldThatNeverWas);
+    var TWTNWproof = getProofs(TWTNW);
+    sortWorldLists(TWTNWproof, "The World That Never Was");
     var TWTNWnumber = numberOfChecks(TWTNW);
 
     var DF = createWorldList(Forms);
+    var DFproof = getProofs(DF);
+    sortWorldLists(DFproof, "Drive Forms");
     var DFnumber = numberOfChecks(DF);
 
     var LU = createWorldList(Levels);
+    var LUproof = getProofs(LU);
+    sortWorldLists(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
     
     var worldChecks = {
         "100 Acre Wood" : AWnumber,
+        "Atlantica" : ATnumber,
         "Simulated Twilight Town" : STTnumber, 
         "Twilight Town" : TTnumber, 
         "Hollow Bastion" : HBnumber,
@@ -261,8 +325,18 @@ function createHints() {
 
     allworlds = shuffle(allworlds);
 
+    var selectedworlds = proofLocations.concat(allworlds);
+
+    var tempHints = [];
+
+    for(var a = 0; a < 13; a++) {
+        tempHints.push(writeHint(selectedworlds[a], worldChecks[selectedworlds[a]]));
+    }
+
+    tempHints = shuffle(tempHints);
+
     for(var i = 0; i < 13; i++) {
-        hints.push(writeHint(allworlds[i], worldChecks[allworlds[i]]));
+        hints.push(tempHints[i]);
     }
 
 }
