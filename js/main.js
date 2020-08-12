@@ -159,6 +159,14 @@ var keyItems = [
     "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE"
 ];
 
+var ansemReports = [
+    "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE"
+]
+
+var tornPages = [
+    "00000020"
+]
+
 var proofs = [
     "00000251", "00000252", "00000253"
 ];
@@ -195,10 +203,10 @@ function getProofs(world) {
             proof = true;
         }
     }
-    console.log(proof);
     return proof;
 }
 
+//Prioritize worlds/locations with proofs
 function sortWorldLists(proof, worldName) {
     if(proof) {
         proofLocations.push(worldName);
@@ -339,6 +347,34 @@ function createHints() {
         hints.push(tempHints[i]);
     }
 
+}
+
+//Include or exclude category of items from key items
+function include(id) {
+    if(document.getElementById(id).checked) {
+        switch(id) {
+            case 'page':
+                keyItems = keyItems.concat(tornPages);
+                break;
+
+            case 'report':
+                keyItems = keyItems.concat(ansemReports);
+                break;
+        }
+    }
+    else {
+        switch(id) {
+            case 'page':
+                var index = keyItems.indexOf(tornPages[0]);
+                keyItems.splice(index, 1);
+                break;
+
+            case 'report':
+                var index = keyItems.indexOf(ansemReports[0]);
+                keyItems.splice(index, 13);
+                break;
+        }
+    }
 }
 
 //Remove world from list of possible hints

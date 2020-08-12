@@ -17,26 +17,43 @@
     <button id="gen" type="button" onclick="generate()">Generate Hints</button>
 
     <p>Select a seed and click the Generate Hints button. The seed needs to be a pnach file.</p>
-    <p>You can select a world below to exclude it.</p>
     
-    <div id="replace">
-        <table>
-            <tr>
-                <td>
-                    <label><input type="checkbox" id="Simulated Twilight Town" onclick="exclude(this.id)"/>Simulated Twilight Town</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label><input type="checkbox" id="100 Acre Wood" onclick="exclude(this.id)">100 Acre Wood</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label><input type="checkbox" id="Atlantica" onclick="exclude(this.id)">Atlantica</label>
-                </td>
-            </tr>
-        </table>
+    <div>
+        <div id="include">
+            <p>You can select a category of item to include/exclude from the important checks pool.</p>
+            <table>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" checked="true" id="page" onclick="include(this.id)"/>Torn Pages</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" checked="true" id="report" onclick="include(this.id)">Secret Ansem Reports</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="replace">
+            <p>You can select a world below to exclude it.</p>
+            <table>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" id="Simulated Twilight Town" onclick="exclude(this.id)"/>Simulated Twilight Town</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" id="100 Acre Wood" onclick="exclude(this.id)">100 Acre Wood</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" id="Atlantica" onclick="exclude(this.id)">Atlantica</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <hr>
@@ -165,7 +182,7 @@
     </div>
 
     <footer>
-        <p>Last updated: 8/11/20</p>
+        <p>Last updated: 8/12/20</p>
     </footer>
     
 </body>
