@@ -64,6 +64,8 @@ function generate() {
         document.getElementById('gen').style.backgroundColor = "green";
         document.getElementById('gen').disabled = true;
         document.getElementById('confirm').innerHTML = "Hints have been generated! Refresh to play again.";
+        document.getElementById('page').disabled = true;
+        document.getElementById('report').disabled = true;
         document.getElementById('Simulated Twilight Town').disabled = true;
         document.getElementById('100 Acre Wood').disabled = true;
         document.getElementById('Atlantica').disabled = true;
@@ -95,6 +97,8 @@ function uploadHints() {
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
     document.getElementById('confirm').innerHTML = "Hints have been uploaded! Refresh to play again.";
+    document.getElementById('page').disabled = true;
+    document.getElementById('report').disabled = true;
     document.getElementById('Simulated Twilight Town').disabled = true;
     document.getElementById('100 Acre Wood').disabled = true;
     document.getElementById('Atlantica').disabled = true;
