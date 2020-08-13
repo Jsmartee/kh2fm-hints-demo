@@ -379,7 +379,7 @@ function include(id) {
 
 //Remove world from list of possible hints
 function exclude(id) {
-    if(document.getElementById(id).checked) {
+    if(!document.getElementById(id).checked) {
         for(var i = 0; i < allworlds.length; i++) {
             if(allworlds[i] === id) {
                 allworlds.splice(i, 1);
@@ -389,6 +389,7 @@ function exclude(id) {
     else {
         allworlds.push(id);
     }
+    console.log(allworlds);
 }
 
 var allworlds = [

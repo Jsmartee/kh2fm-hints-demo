@@ -20,7 +20,7 @@
     
     <div>
         <div id="include">
-            <p>You can select a category of item to include/exclude from the important checks pool.</p>
+            <p>You can select a category of item to include/exclude from the important checks pool. (checked = include ; unchecked = exclude)</p>
             <table>
                 <tr>
                     <td>
@@ -35,16 +35,16 @@
             </table>
         </div>
         <div id="replace">
-            <p>You can select a world below to exclude it.</p>
+            <p>You can select a world below to include/exclude it. (checked = include ; unchecked = exclude)</p>
             <table>
                 <tr>
                     <td>
-                        <label><input type="checkbox" id="Simulated Twilight Town" onclick="exclude(this.id)"/>Simulated Twilight Town</label>
+                        <label><input type="checkbox" checked="true" id="Simulated Twilight Town" onclick="exclude(this.id)"/>Simulated Twilight Town</label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label><input type="checkbox" id="100 Acre Wood" onclick="exclude(this.id)">100 Acre Wood</label>
+                        <label><input type="checkbox" checked="true" id="100 Acre Wood" onclick="exclude(this.id)">100 Acre Wood</label>
                     </td>
                 </tr>
                 <tr>
