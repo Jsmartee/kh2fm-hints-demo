@@ -23,7 +23,28 @@ Important Checks:
 * 5 Torn Pages (can be excluded)
 * 13 Ansem Reports (can be excluded)
 
+Worlds/Locations:
+* 100 Acre Wood (can be excluded)
+* Atlantica (can be excluded)
+* Simulated Twilight Town (can be excluded)
+* Twilight Town
+* Hollow Bastion
+* Beast's Castle
+* Olympus Coliseum
+* Agrabah
+* Land of Dragons
+* Pride Lands
+* Disney Castle
+* Halloween Town
+* Port Royal
+* Space Paranoids
+* The World That Never Was
+* Drive Forms
+* Sora's Heart (Level Ups)
+
 Other notes:
+* The worlds/locations with proofs will always be hinted.
+* The 3 chests in the Garden of Assemblage and the 7 Critical Bonus rewards are not included in any world.
 * Disney Castle and Timeless River are combined into "Disney Castle"
 * Cavern of Remembrance is considered part of "Hollow Bastion"
 * Sora's Heart refers to level ups (level up checks only go up to 50 right now)
