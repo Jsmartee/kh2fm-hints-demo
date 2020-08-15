@@ -22,6 +22,7 @@ Important Checks:
 * Magic (18 total)
 * 5 Torn Pages (can be excluded)
 * 13 Ansem Reports (can be excluded)
+* Second Chance & Once More (can be excluded, will not be hinted if they are on keyblades)
 
 Worlds/Locations:
 * 100 Acre Wood (can be excluded)
