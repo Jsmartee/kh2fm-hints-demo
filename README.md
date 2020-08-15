@@ -48,5 +48,5 @@ Other notes:
 * The 3 chests in the Garden of Assemblage and the 7 Critical Bonus rewards are not included in any world.
 * Disney Castle and Timeless River are combined into "Disney Castle"
 * Cavern of Remembrance is considered part of "Hollow Bastion"
-* Sora's Heart refers to level ups (level up checks only go up to 50 right now)
+* Sora's Heart refers to level ups
 * Absent Silhouettes and Data Org members are included in their respective worlds
