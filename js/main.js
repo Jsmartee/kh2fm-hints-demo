@@ -373,6 +373,10 @@ function include(id) {
             case 'report':
                 keyItems = keyItems.concat(ansemReports);
                 break;
+
+            case 'abilities':
+                keyItems = keyItems.concat(abilities);
+                break;
         }
     }
     else {
@@ -385,6 +389,11 @@ function include(id) {
             case 'report':
                 var index = keyItems.indexOf(ansemReports[0]);
                 keyItems.splice(index, 13);
+                break;
+
+            case 'abilities':
+                var index = keyItems.indexOf(abilities[0]);
+                keyItems.splice(index, 2);    
                 break;
         }
     }
