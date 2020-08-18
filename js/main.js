@@ -47,7 +47,7 @@ function errorHandler(evt) {
     }
 }
 //End CSV functions
-  
+
 var locationList = [];
 var rewardList = [];
   
@@ -55,6 +55,45 @@ var hints = [];
 var savedhints = [];
 
 var seed;
+
+var lists = [];
+var alllists = [];
+var worlds = [];
+var worldAndList = [];
+
+function start() {
+    alllists.push(AcreWood, SimulatedTwilightTown, TwilightTown, HollowBastion, BeastsCastle, 
+        OlympusColiseum, Agrabah, LandOfDragons, PrideLands, DisneyCastle, 
+        HalloweenTown, PortRoyal, SpaceParanoids, TheWorldThatNeverWas, Forms, Levels, Atlantica);
+
+    lists.push(AcreWood, SimulatedTwilightTown, TwilightTown, HollowBastion, BeastsCastle, 
+        OlympusColiseum, Agrabah, LandOfDragons, PrideLands, DisneyCastle, 
+        HalloweenTown, PortRoyal, SpaceParanoids, TheWorldThatNeverWas, Forms, Levels);
+
+    var creatinglists = {
+        "100 Acre Wood": AcreWood,
+        "Simulated Twilight Town" : SimulatedTwilightTown,
+        "Twilight Town" : TwilightTown,
+        "Hollow Bastion" : HollowBastion,
+        "Beast's Castle" : BeastsCastle,
+        "Olympus Coliseum" : OlympusColiseum,
+        "Agrabah" : Agrabah,
+        "Land of Dragons" : LandOfDragons,
+        "Pride Lands" : PrideLands,
+        "Disney Castle" : DisneyCastle,
+        "Halloween Town" : HalloweenTown,
+        "Port Royal" : PortRoyal,
+        "Space Paranoids" : SpaceParanoids,
+        "The World That Never Was" : TheWorldThatNeverWas,
+        "Drive Forms" : Forms,
+        "Sora's Heart" : Levels,
+        "Atlantica" : Atlantica,
+    }
+
+    worlds = Object.keys(creatinglists);
+
+    worldAndList = creatinglists;
+}
   
 function generate() {
     if(dataArray.length === 0) {
@@ -81,18 +120,23 @@ function generate() {
 }
 
 function save() {
-    for(var i = 0; i < hints.length; i++) {
-        savedhints.push(hints[i].concat(','));
-    }
     var blob = new Blob(savedhints, {type: "text/plain;charset=utf-8"});
     saveAs(blob, "kh2fm-hints-" + seed + ".txt");
 }
 
 function uploadHints() {
-    var row = dataArray[0].toString().split(',');
+    var row = dataArray[0].toString().split('.');
     row.pop();
     for(var i = 0; i < row.length; i++) {
-        hints.push(row[i]);
+        var index = row[i].toString().split(',');
+        var code = index[0];
+        var number = index[1];
+        for(var j = 0; j < alllists.length; j++) {
+            if(alllists[j].includes(code)) {
+                var world = worlds[j];
+            }
+        }
+        hints.push(writeHint(world, number));
     }
     document.getElementById('upload-btn').style.backgroundColor = "green";
     document.getElementById('upload-btn').disabled = true;
@@ -240,86 +284,103 @@ function writeHint(world, number) {
 
 function createHints() {
     var AW = createWorldList(AcreWood);
+    var AWcode = AcreWood[Math.floor(Math.random() * 4)];
     var AWproof = getProofs(AW);
     sortWorldLists(AWproof, "100 Acre Wood");
     var AWnumber = numberOfChecks(AW);
 
     var AT = createWorldList(Atlantica);
+    var ATcode = Atlantica[Math.floor(Math.random() * 4)];
     var ATproof = getProofs(AT);
     sortWorldLists(ATproof, "Atlantica");
     var ATnumber = numberOfChecks(AT);
 
     var STT = createWorldList(SimulatedTwilightTown);
+    var STTcode = SimulatedTwilightTown[Math.floor(Math.random() * 4)];
     var STTproof = getProofs(STT);
     sortWorldLists(STTproof, "Simulated Twilight Town");
     var STTnumber = numberOfChecks(STT);
 
     var TT = createWorldList(TwilightTown);
+    var TTcode = TwilightTown[Math.floor(Math.random() * 4)];
     var TTproof = getProofs(TT);
     sortWorldLists(TTproof, "Twilight Town");
     var TTnumber = numberOfChecks(TT);
 
     var HB = createWorldList(HollowBastion);
+    var HBcode = HollowBastion[Math.floor(Math.random() * 4)];
     var HBproof = getProofs(HB);
     sortWorldLists(HBproof, "Hollow Bastion");
     var HBnumber = numberOfChecks(HB);
 
     var BC = createWorldList(BeastsCastle);
+    var BCcode = BeastsCastle[Math.floor(Math.random() * 4)];
     var BCproof = getProofs(BC);
     sortWorldLists(BCproof, "Beast's Castle");
     var BCnumber = numberOfChecks(BC);
 
     var OC = createWorldList(OlympusColiseum);
+    var OCcode = OlympusColiseum[Math.floor(Math.random() * 4)];
     var OCproof = getProofs(OC);
     sortWorldLists(OCproof, "Olympus Coliseum");
     var OCnumber = numberOfChecks(OC);
 
     var AG = createWorldList(Agrabah);
+    var AGcode = Agrabah[Math.floor(Math.random() * 4)];
     var AGproof = getProofs(AG);
     sortWorldLists(AGproof, "Agrabah");
     var AGnumber = numberOfChecks(AG);
 
     var LOD = createWorldList(LandOfDragons);
+    var LODcode = LandOfDragons[Math.floor(Math.random() * 4)];
     var LODproof = getProofs(LOD);
     sortWorldLists(LODproof, "Land of Dragons");
     var LODnumber = numberOfChecks(LOD);
 
     var PL = createWorldList(PrideLands);
+    var PLcode = PrideLands[Math.floor(Math.random() * 4)];
     var PLproof = getProofs(PL);
     sortWorldLists(PLproof, "Pride Lands");
     var PLnumber = numberOfChecks(PL);
 
     var DC = createWorldList(DisneyCastle);
+    var DCcode = DisneyCastle[Math.floor(Math.random() * 4)];
     var DCproof = getProofs(DC);
     sortWorldLists(DCproof, "Disney Castle");
     var DCnumber = numberOfChecks(DC);
 
     var HT = createWorldList(HalloweenTown);
+    var HTcode = HalloweenTown[Math.floor(Math.random() * 4)];
     var HTproof = getProofs(HT);
     sortWorldLists(HTproof, "Halloween Town");
     var HTnumber = numberOfChecks(HT);
 
     var PR = createWorldList(PortRoyal);
+    var PRcode = PortRoyal[Math.floor(Math.random() * 4)];
     var PRproof = getProofs(PR);
     sortWorldLists(PRproof, "Port Royal");
     var PRnumber = numberOfChecks(PR);
 
     var SP = createWorldList(SpaceParanoids);
+    var SPcode = SpaceParanoids[Math.floor(Math.random() * 4)];
     var SPproof = getProofs(SP);
     sortWorldLists(SPproof, "Space Paranoids");
     var SPnumber = numberOfChecks(SP);
 
     var TWTNW = createWorldList(TheWorldThatNeverWas);
+    var TWTNWcode = TheWorldThatNeverWas[Math.floor(Math.random() * 4)];
     var TWTNWproof = getProofs(TWTNW);
     sortWorldLists(TWTNWproof, "The World That Never Was");
     var TWTNWnumber = numberOfChecks(TWTNW);
 
     var DF = createWorldList(Forms);
+    var DFcode = Forms[Math.floor(Math.random() * 4)];
     var DFproof = getProofs(DF);
     sortWorldLists(DFproof, "Drive Forms");
     var DFnumber = numberOfChecks(DF);
 
     var LU = createWorldList(Levels);
+    var LUcode = Levels[Math.floor(Math.random() * 4)];
     var LUproof = getProofs(LU);
     sortWorldLists(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
@@ -344,20 +405,39 @@ function createHints() {
         "Sora's Heart" : LUnumber
     }
 
-    allworlds = shuffle(allworlds);
-
-    var selectedworlds = proofLocations.concat(allworlds);
-
-    var tempHints = [];
-
-    for(var a = 0; a < 13; a++) {
-        tempHints.push(writeHint(selectedworlds[a], worldChecks[selectedworlds[a]]));
+    var codeChecks = {
+        "100 Acre Wood" : AWcode,
+        "Atlantica" : ATcode,
+        "Simulated Twilight Town" : STTcode, 
+        "Twilight Town" : TTcode, 
+        "Hollow Bastion" : HBcode,
+        "Beast's Castle" : BCcode, 
+        "Olympus Coliseum" : OCcode,
+        "Agrabah" : AGcode, 
+        "Land of Dragons" : LODcode,
+        "Pride Lands" : PLcode,
+        "Disney Castle" : DCcode,
+        "Halloween Town" : HTcode,
+        "Port Royal" : PRcode,
+        "Space Paranoids" : SPcode,
+        "The World That Never Was" : TWTNWcode,
+        "Drive Forms" : DFcode,
+        "Sora's Heart" : LUcode 
     }
 
-    tempHints = shuffle(tempHints);
+    shuffallworlds = shuffle(allworlds);
+
+    var worlds = proofLocations.concat(shuffallworlds);
+    var selectedworlds = [];
+    for(var k = 0; k < 13; k++) {
+        selectedworlds.push(worlds[k]);
+    }
+
+    selectedworlds = shuffle(selectedworlds);
 
     for(var i = 0; i < 13; i++) {
-        hints.push(tempHints[i]);
+        hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
+        savedhints.push(codeChecks[selectedworlds[i]] + "," + worldChecks[selectedworlds[i]] + ".");
     }
 
 }
@@ -401,15 +481,22 @@ function include(id) {
 
 //Remove world from list of possible hints
 function exclude(id) {
+    var list = worldAndList[id];
     if(!document.getElementById(id).checked) {
         for(var i = 0; i < allworlds.length; i++) {
             if(allworlds[i] === id) {
                 allworlds.splice(i, 1);
+                for(var j = 0; j < lists.length; j++) {
+                    if(lists[j] === list) {
+                        lists.splice(j, 1);
+                    }
+                }
             }
         }
     }
     else {
         allworlds.push(id);
+        lists.push(list);
     }
     console.log(allworlds);
 }
