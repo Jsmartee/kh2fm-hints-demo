@@ -20,5 +20,9 @@ header {
 }
 
 footer {
-    font-size: x-small;
+    font-size: xx-small;
+}
+
+footer #update {
+    font-size: small;
 }
