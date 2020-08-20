@@ -50,3 +50,6 @@ Other notes:
 * Cavern of Remembrance is considered part of "Hollow Bastion"
 * Sora's Heart refers to level ups
 * Absent Silhouettes and Data Org members are included in their respective worlds
+
+## Other Generators
+If you're interested in another type of hint generator, check out [GoARacle](https://github.com/CrescentRR/GoARacle) by CrescentRR (currently in beta).
