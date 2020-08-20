@@ -130,7 +130,7 @@ function uploadHints() {
     for(var i = 0; i < row.length; i++) {
         var index = row[i].toString().split(',');
         var code = index[0];
-        var number = index[1];
+        var number = parseInt(index[1]) - 32;
         for(var j = 0; j < alllists.length; j++) {
             if(alllists[j].includes(code)) {
                 var world = worlds[j];
@@ -437,7 +437,7 @@ function createHints() {
 
     for(var i = 0; i < 13; i++) {
         hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
-        savedhints.push(codeChecks[selectedworlds[i]] + "," + worldChecks[selectedworlds[i]] + ".");
+        savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
     }
 
 }
