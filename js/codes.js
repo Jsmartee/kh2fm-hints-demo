@@ -429,9 +429,7 @@ var Atlantica = [
     "11CE0846",
     "11CE08E2",
     "11CE08EE",
-    "11CE08FA",
-    "11CE0A62", //AS larxene
-    "11CE0A9E" //data larxene
+    "11CE08FA"
 ]
 
 var AcreWood = [
@@ -479,7 +477,9 @@ var SpaceParanoids = [
     "21D10C38",
     "21D11078",
     "21D10C78",
-    "11CE0816"
+    "11CE0816",
+    "11CE0A62", //AS larxene
+    "11CE0A9E" //data larxene
 ]
 
 var TheWorldThatNeverWas = [
