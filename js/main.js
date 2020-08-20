@@ -273,11 +273,18 @@ function sortWorldLists(proof, worldName) {
 }
 
 function writeHint(world, number) {
-    if(number === 1) {
-        var hint = world + " has " + number + " important check.";
-    }
-    else {
-        var hint = world + " has " + number + " important checks.";
+    switch(number) {
+        case 0:
+            var hint = world + " is a heartless choice.";
+            break;
+        
+        case 1:
+            var hint = world + " has " + number + " important check.";
+            break;
+        
+        default:
+            var hint = world + " has " + number + " important checks.";
+            break;
     }
     return hint;
 }
