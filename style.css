@@ -30,3 +30,7 @@ footer #update {
 #confirm {
     font-weight: bold;
 }
+
+a:visited {
+    color: green;
+}
