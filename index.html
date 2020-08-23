@@ -13,15 +13,19 @@
 
     <header>KH2FM Randomizer Hints Demo</header>
 
+    <p>This hint generator tells you how many important checks are in a world.
+        To see what is considered an important check and more information about this generator, see the <a href="https://github.com/Jsmartee/kh2fm-hints-demo">Readme</a></p>
+    <p>Check out another hint generator made by CrescentRR (currently in beta): <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a></p>
+
+    <hr>
+
+    <h3>Generate Hints</h3>
+
     <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".pnach">
 
     <button id="gen" type="button" onclick="generate()">Generate Hints</button>
 
     <p>Select a seed and click the Generate Hints button. The seed needs to be a pnach file.</p>
-
-    <p>When you collect a Secret Ansem Report in the game, click on the coresponding button. To see what is considered an important check and more information about this generator, see the <a href="https://github.com/Jsmartee/kh2fm-hints-demo">Readme</a>.</p>
-    
-    <p>Check out another hint generator made by CrescentRR (currently in beta): <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a></p>
 
     <div>
         <div id="include">
@@ -29,7 +33,7 @@
             <table>
                 <tr>
                     <td>
-                        <label><input type="checkbox" checked="true" id="abilities" onclick="include(this.id)">Second Chance & Once More (will not be hinted if on keyblades)</label>
+                        <label><input type="checkbox" checked="true" id="abilities" onclick="include(this.id)">Second Chance & Once More (will not be included in any world's hint if they're on keyblades)</label>
                     </td>
                 </tr>
                 <tr>
@@ -68,6 +72,7 @@
 
     <hr>
 
+    <h3>Share Hints</h3>
     <p>If you're playing the same seed with other people and want the same hints, click the "Save Hints" button. This will save the hints as a text file that you can send to the other players.</p>
     <button id="save-btn" onclick="save()">Save Hints</button>
     <br>
@@ -77,12 +82,15 @@
     <br>
 
     <hr>
-
     <p>The 3 Garden of Assemblage chests and the 7 Critical Bonus rewards are not included in any world.</p>
+    <p>"Sora's Heart" refers to Level Ups.</p>
     <p>"Heartless Choice" refers to 0 important checks.</p>
-    <p id="confirm">No hints have been generated yet.</p>
 
     <hr>
+
+    <p id="confirm">No hints have been generated yet.</p>
+
+    <p>When you collect a Secret Ansem Report in the game, click on the coresponding button to reveal a hint.</p>
 
     <div id="table">
         <table>
@@ -193,8 +201,11 @@
         </table>
     </div>
 
+    <hr>
+
+
     <footer>
-        <p id="update">Last updated: 8/20/20</p>
+        <p id="update">Last updated: 8/23/20</p>
         <p>Report any bugs or problems to Jsmartee on Discord.</p>
         <p>Feedback/suggestions are also welcome.</p>
     </footer>
