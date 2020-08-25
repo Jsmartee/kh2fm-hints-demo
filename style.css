@@ -1,15 +1,36 @@
 body {
-    background-color: #36393f;
-    color: white;
+    background-color: #d0cfd3;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 15px;
 }
 
 header {
     font-size: 25px;
+    font-weight: bold;
     height: 10px;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+section {
+    align-content: center;
+    display: inline-block;
+}
+
+.gen {
+    border: 1px solid #052f5f;
+    float: left;
+    margin: 10px;
+    padding: 0 10px;
+    height: 470px;
+    width: 700px;
+}
+
+section .gen h3 {
+    background-color: #052f5f;
+    color: white;
+    padding: 5px;
 }
 
 #table {
@@ -30,6 +51,10 @@ footer #update {
 
 #confirm {
     font-weight: bold;
+}
+
+a:link {
+    color: red;
 }
 
 a:visited {
