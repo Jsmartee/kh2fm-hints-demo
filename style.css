@@ -23,7 +23,7 @@ section {
     float: left;
     margin: 10px;
     padding: 0 10px;
-    height: 470px;
+    height: 490px;
     width: 700px;
 }
 
@@ -49,7 +49,7 @@ footer #update {
     font-size: small;
 }
 
-#confirm {
+.confirm {
     font-weight: bold;
 }
 

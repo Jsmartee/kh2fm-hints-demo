@@ -97,12 +97,13 @@ function start() {
   
 function generate() {
     if(dataArray.length === 0) {
-        document.getElementById('confirm').innerHTML = "Please select a seed to generate hints.";
+        document.getElementById('confirmGen').innerHTML = "Please select a seed to generate hints.";
     }
     else {
         document.getElementById('gen').style.backgroundColor = "green";
         document.getElementById('gen').disabled = true;
-        document.getElementById('confirm').innerHTML = "Hints have been generated! Refresh to play again.";
+        document.getElementById('confirmGen').innerHTML = "Hints have been generated! Refresh to play again.";
+        document.getElementById('confirmShare').innerHTML = "Hints have been generated! Click Save Hints to send them to other players.";
         document.getElementById('page').disabled = true;
         document.getElementById('report').disabled = true;
         document.getElementById('abilities').disabled = true;
@@ -141,7 +142,8 @@ function uploadHints() {
     document.getElementById('upload-btn').style.backgroundColor = "green";
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
-    document.getElementById('confirm').innerHTML = "Hints have been uploaded! Refresh to play again.";
+    document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! Refresh to play again.";
+    document.getElementById('confirmGen').innerHTML = "Hints have been uploaded! Refresh to play again.";
     document.getElementById('page').disabled = true;
     document.getElementById('report').disabled = true;
     document.getElementById('abilities').disabled = true;
@@ -176,6 +178,9 @@ function getLists() {
 function reveal(id) {
     if(dataArray.length === 0) {
         document.getElementById('report-' + id).innerHTML = "Please select a seed to generate hints.";
+    }
+    else if(hints.length === 0) {
+        document.getElementById('report-' + id).innerHTML = "Hints have not been generated.";
     }
     else {
         var text = document.getElementById('report-' + id);

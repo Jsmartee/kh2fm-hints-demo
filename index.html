@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KH2FMR Hints</title>
+    <title>KH2FMR Hints Demo</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/codes.js"></script>
@@ -27,6 +27,8 @@
             <br>
             <br>
             <button id="gen" type="button" onclick="generate()">Generate Hints</button>
+
+            <p class="confirm" id="confirmGen">No hints have been generated yet.</p>
     
             <p>Select a seed and click the Generate Hints button. The seed needs to be a pnach file.</p>
     
@@ -90,6 +92,8 @@
             <br>
             <br>
             <button id="upload-btn" onclick="uploadHints()">Upload Hints</button>
+
+            <p class="confirm" id="confirmShare">No hints have been generated yet.</p>
         </div>
     </section>
 
@@ -99,8 +103,6 @@
     <p>"Heartless Choice" refers to 0 important checks.</p>
 
     <hr>
-
-    <p id="confirm">No hints have been generated yet.</p>
 
     <p>When you collect a Secret Ansem Report in the game, click on the coresponding button to reveal a hint.</p>
 
