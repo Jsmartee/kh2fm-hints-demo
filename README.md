@@ -59,4 +59,4 @@ Features:
 * Themed pools of items
 * Anti-cheat system
 * No need for seeded hints
-* Linked spreadhsheet checklist to help track items
+* Linked spreadsheet checklist to help track items
