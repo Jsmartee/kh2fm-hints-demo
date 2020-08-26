@@ -53,3 +53,10 @@ Other notes:
 
 ## Other Generators
 If you're interested in another type of hint generator, check out [GoARacle](https://github.com/CrescentRR/GoARacle) by CrescentRR (currently in beta).
+
+Features:
+* Larger pool of hinted items including several useful abilities
+* Themed pools of items
+* Anti-cheat system
+* No need for seeded hints
+* Linked spreadsheet checklist to help track items
