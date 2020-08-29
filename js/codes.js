@@ -122,8 +122,8 @@ var HollowBastion = [
     "11CE0942",
     "11CE09A2",
     "11CE09EA",
-    "11CE0B3A",
-    "11CE0B2E",
+    "11CE0B3A", //shroom
+    "11CE0B2E", //shroom
 
     "11CE04E6", //cor
     "11CE04F2",
@@ -274,8 +274,8 @@ var DisneyCastle = [
     "11CDFA06",
     "21D10D28",
     "11CE0756",
-    "11CE0B16",
-    "11CE0B22",
+    "11CE0B16", //terra
+    "11CE0B22", //terra
 
     "11CDF95E", //timeless river
     "11CDF96A",

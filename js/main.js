@@ -107,6 +107,7 @@ function generate() {
         document.getElementById('page').disabled = true;
         document.getElementById('report').disabled = true;
         document.getElementById('abilities').disabled = true;
+        document.getElementById('final').disabled = true;
         document.getElementById('Simulated Twilight Town').disabled = true;
         document.getElementById('100 Acre Wood').disabled = true;
         document.getElementById('Atlantica').disabled = true;
@@ -147,6 +148,7 @@ function uploadHints() {
     document.getElementById('page').disabled = true;
     document.getElementById('report').disabled = true;
     document.getElementById('abilities').disabled = true;
+    document.getElementById('final').disabled = true;
     document.getElementById('Simulated Twilight Town').disabled = true;
     document.getElementById('100 Acre Wood').disabled = true;
     document.getElementById('Atlantica').disabled = true;
@@ -219,14 +221,18 @@ var keyItems = [
 
 var ansemReports = [
     "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE"
-]
+];
 
 var tornPages = [
     "00000020"
-]
+];
 
 var abilities = [
     "0000019F", "000001A0"
+];
+
+var finalform = [
+    "0000001D"
 ]
 
 var proofs = [
@@ -469,6 +475,9 @@ function include(id) {
             case 'abilities':
                 keyItems = keyItems.concat(abilities);
                 break;
+
+            case 'final':
+                keyItems = keyItems.concat(finalform);
         }
     }
     else {
@@ -487,8 +496,14 @@ function include(id) {
                 var index = keyItems.indexOf(abilities[0]);
                 keyItems.splice(index, 2);    
                 break;
+
+            case 'final':
+                var index = keyItems.indexOf(finalform[0]);
+                keyItems.splice(index, 1);    
+                break;
         }
     }
+    console.log(keyItems);
 }
 
 //Remove world from list of possible hints
