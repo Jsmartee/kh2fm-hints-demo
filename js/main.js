@@ -236,7 +236,7 @@ var finalform = [
 ]
 
 var proofs = [
-    "00000251", "00000252", "00000253"
+    "00000251", "00000252", "00000253" //connection, nonexistence, peace
 ];
 
 //Create list of rewards from world
