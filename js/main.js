@@ -221,9 +221,6 @@ var keyItems = [
 
     //Ansem Reports
     "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE",
-
-    //Second Chance & Once More
-    "0000019F", "000001A0"
 ];
 
 var ansemReports = [
@@ -235,7 +232,7 @@ var tornPages = [
 ];
 
 var abilities = [
-    "0000019F", "000001A0"
+    "0000019F", "000001A0" //Second Chance & Once More
 ];
 
 var finalform = [
