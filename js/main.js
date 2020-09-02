@@ -1,5 +1,9 @@
+function load(elem) {
+    elem.nextElementSibling.click();
+}
+
 //CSV functions from MounirMesselmeni
-function handleFiles(files) {
+function handleFiles(elem, files) {
     // Check for the various File API support.
     if (window.FileReader) {
       // FileReader are supported.
@@ -8,6 +12,9 @@ function handleFiles(files) {
     else {
         alert('FileReader are not supported in this browser.');
     }
+
+    elem.nextElementSibling.innerText = files[0].name;
+    elem.previousElementSibling.classList.add("success");
 }
   
 function getAsText(fileToRead) {
@@ -100,7 +107,7 @@ function generate() {
         document.getElementById('confirmGen').innerHTML = "Please select a seed to generate hints.";
     }
     else {
-        document.getElementById('gen').style.backgroundColor = "green";
+        document.getElementById("gen").classList.add("success");
         document.getElementById('gen').disabled = true;
         document.getElementById('confirmGen').innerHTML = "Hints have been generated! Refresh to play again.";
         document.getElementById('confirmShare').innerHTML = "Hints have been generated! Click Save Hints to send them to other players.";
@@ -140,7 +147,7 @@ function uploadHints() {
         }
         hints.push(writeHint(world, number));
     }
-    document.getElementById('upload-btn').style.backgroundColor = "green";
+    document.getElementByid("upload-btn").classList.add("success");
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
     document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! Refresh to play again.";
@@ -187,7 +194,7 @@ function reveal(id) {
     else {
         var text = document.getElementById('report-' + id);
         text.innerHTML = hints[id - 1];
-        document.getElementById(id).style.backgroundColor = "green";
+        document.getElementById(id).classList.add("success");
     }
 }
 
