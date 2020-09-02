@@ -51,12 +51,15 @@ Other notes:
 * Sora's Heart refers to level ups
 * Absent Silhouettes and Data Org members are included in their respective worlds
 
+## Contributors
+The design of the page was all done by Zax, the creator of the KH2FM Randomizer Item Tracker. Check out his work: [KH2FM Item Tracker](https://tracker.zaxu.xyz/)
+
 ## Other Generators
-If you're interested in another type of hint generator, check out [GoARacle](https://github.com/CrescentRR/GoARacle) by CrescentRR (currently in beta).
+If you're interested in another type of hint generator, check out [GoARacle](https://github.com/CrescentRR/GoARacle) by CrescentRR.
 
 Features:
 * Larger pool of hinted items including several useful abilities
 * Themed pools of items
 * Anti-cheat system
 * No need for seeded hints
-* Linked spreadsheet checklist to help track items
+* In-app checklist to help track collected items
