@@ -169,4 +169,8 @@ a:visited {
         flex-direction: column;
         align-items: center;
     }
+
+    .gen {
+        min-width: initial;
+    }
 }
