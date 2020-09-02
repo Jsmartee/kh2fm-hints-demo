@@ -147,7 +147,7 @@ function uploadHints() {
         }
         hints.push(writeHint(world, number));
     }
-    document.getElementByid("upload-btn").classList.add("success");
+    document.getElementById("upload-btn").classList.add("success");
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
     document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! Refresh to play again.";
