@@ -287,6 +287,59 @@ function sortWorldLists(proof, worldName) {
     }
 }
 
+var reportLocations = [];
+
+//finds location of item
+function findLocation(item) {
+    var locationCode;
+    var location;
+    for(var i = 0; i < rewardList.length; i++) {
+        if(rewardList[i] === item) {
+            for(var j = 0; j < alllists.length; j++) {
+                if(alllists[j].includes(locationList[i])) { //this check is mainly for levels
+                    locationCode = locationList[i];
+                }
+            }
+        }
+    }
+    console.log(locationCode);
+    for(var j = 0; j < alllists.length; j++) {
+        if(alllists[j].includes(locationCode)) {
+            location = Object.keys(worldAndList).find(key => worldAndList[key] === alllists[j]);
+        }
+    }
+    console.log(location);
+    return location;
+}
+
+function writeHintReport(world, number, reportNumber, reportLocation) {
+    switch(number) {
+        case 0:
+            var hint = world + " is a heartless choice.";
+            break;
+        
+        case 1:
+            var hint = world + " has " + number + " important check.";
+            break;
+        
+        default:
+            var hint = world + " has " + number + " important checks.";
+            break;
+    }
+
+    switch(reportNumber) {
+        case 13:
+            var hint2 = " Report 1 is from " + reportLocations[0];
+            break;
+
+        default:
+            var hint2 = " Report " + (reportNumber + 1) + " is from " + reportLocation;
+    }
+
+    hint = hint.concat(hint2);
+    return hint;
+}
+
 function writeHint(world, number) {
     switch(number) {
         case 0:
@@ -457,9 +510,22 @@ function createHints() {
 
     selectedworlds = shuffle(selectedworlds);
 
-    for(var i = 0; i < 13; i++) {
-        hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
-        savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
+    //get report locations
+    for(var j = 0; j < ansemReports.length; j++) {
+        reportLocations.push(findLocation(ansemReports[j]));
+    }
+
+    if(document.getElementById('ReportOption').checked) {
+        for(var i = 0; i < 13; i++) {
+            hints.push(writeHintReport(selectedworlds[i], worldChecks[selectedworlds[i]], i + 1, reportLocations[i + 1]));
+            savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
+        }
+    }
+    else {
+        for(var i = 0; i < 13; i++) {
+            hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
+            savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
+        }
     }
 
 }
