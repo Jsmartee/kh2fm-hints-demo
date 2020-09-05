@@ -3,6 +3,8 @@
 Bare bones hint generator for the Kingdom Hearts 2 Final Mix randomizer.
 Based on SpikeVegeta's hint system where each Ansem Report is a hint that tells you how many important checks are in a world.
 
+Here's a tracker made to be compatible with this hint system: https://github.com/TrevorLuckey/KH2Tracker
+
 ## How To Use
 * Go to https://jsmartee.github.io/kh2fm-hints-demo/
 * Select the pnach file you got from the randomizer generator website and click "Generate Hints".
