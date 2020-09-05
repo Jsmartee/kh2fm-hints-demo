@@ -174,3 +174,52 @@ a:visited {
         min-width: initial;
     }
 }
+
+/* Dark Theme */
+
+:root[theme="dark"] body {
+    background-color: #212121;
+    color: white;
+}
+
+:root[theme="dark"] .gen {
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+:root[theme="dark"] .gen h3 {
+    background-color: hsl(210, 90%, 80%);
+    color: #202020;
+}
+
+:root[theme="dark"] a:link {
+    color: hsl(0, 90%, 72%);
+}
+
+:root[theme="dark"] a:visited {
+    color: hsl(140, 45%, 65%);
+}
+
+:root[theme="dark"] table button {
+    background-color: #464646;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+:root[theme="dark"] table button:hover {
+    background-color: #333;
+}
+
+:root[theme="dark"] .gen button {
+    box-shadow: 0 2px 4px hsla(210, 70%, 60%, 0.25);
+}
+
+:root[theme="dark"] button.success {
+    background-color: hsl(140, 65%, 65%);
+    color: black;
+    box-shadow: 0 2px 4px hsla(140, 65%, 65%, 0.25);
+}
+
+:root[theme="dark"] button.success:hover {
+    background-color: hsl(140, 65%, 72%);
+}
