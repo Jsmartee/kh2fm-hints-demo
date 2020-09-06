@@ -84,7 +84,7 @@
 
                 <div id="replace">
                     <p>You can select a world below to include/exclude it. 
-                    <br>(checked = include : unchecked = exclude)</p>
+                    <br>(toggled = include : untoggled = exclude)</p>
                     <div class="row">
                         <label class="switch">
                             <input type="checkbox" checked="true" id="Simulated Twilight Town" onclick="exclude(this.id)"/>
@@ -118,7 +118,7 @@
 
                 <p>Select the hints text file that was sent to you and click "Upload Hints" to get the same hints as the person who generated them.</p>
                 <p>
-                <button onclick="load(this)">Select Seed File</button>
+                <button onclick="load(this)">Select Text File</button>
                 <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".txt">
                 <span style="margin-left: 5px"></span>
                 </p>

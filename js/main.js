@@ -109,7 +109,7 @@ function generate() {
     else {
         document.getElementById("gen").classList.add("success");
         document.getElementById('gen').disabled = true;
-        document.getElementById('confirmGen').innerHTML = "Hints have been generated! Refresh to play again.";
+        document.getElementById('confirmGen').innerHTML = "Hints have been generated! To play another seed, refresh the page.";
         document.getElementById('confirmShare').innerHTML = "Hints have been generated! Click Save Hints to send them to other players.";
         document.getElementById('page').disabled = true;
         document.getElementById('report').disabled = true;
@@ -150,8 +150,8 @@ function uploadHints() {
     document.getElementById("upload-btn").classList.add("success");
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
-    document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! Refresh to play again.";
-    document.getElementById('confirmGen').innerHTML = "Hints have been uploaded! Refresh to play again.";
+    document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
+    document.getElementById('confirmGen').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
     document.getElementById('page').disabled = true;
     document.getElementById('report').disabled = true;
     document.getElementById('abilities').disabled = true;
@@ -186,7 +186,7 @@ function getLists() {
 
 function reveal(id) {
     if(dataArray.length === 0) {
-        document.getElementById('report-' + id).innerHTML = "Please select a seed to generate hints.";
+        document.getElementById('report-' + id).innerHTML = "No file has been selected.";
     }
     else if(hints.length === 0) {
         document.getElementById('report-' + id).innerHTML = "Hints have not been generated.";
