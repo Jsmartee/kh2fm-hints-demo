@@ -235,9 +235,13 @@ var abilities = [
     "0000019F", "000001A0" //Second Chance & Once More
 ];
 
+var cure = [
+    "00000018"
+];
+
 var finalform = [
     "0000001D"
-]
+];
 
 var proofs = [
     "00000251", "00000252", "00000253" //connection, nonexistence, peace
@@ -482,6 +486,11 @@ function include(id) {
 
             case 'final':
                 keyItems = keyItems.concat(finalform);
+                break;
+            
+            case 'cure':
+                keyItems = keyItems.concat(cure);
+                break;
         }
     }
     else {
@@ -504,6 +513,11 @@ function include(id) {
             case 'final':
                 var index = keyItems.indexOf(finalform[0]);
                 keyItems.splice(index, 1);    
+                break;
+
+            case 'cure':
+                var index = keyItems.indexOf(cure[0]);
+                keyItems.splice(index, 1);
                 break;
         }
     }
