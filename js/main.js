@@ -115,6 +115,7 @@ function generate() {
         document.getElementById('report').disabled = true;
         document.getElementById('abilities').disabled = true;
         document.getElementById('final').disabled = true;
+        document.getElementById('cure').disabled = true;
         document.getElementById('Simulated Twilight Town').disabled = true;
         document.getElementById('100 Acre Wood').disabled = true;
         document.getElementById('Atlantica').disabled = true;
@@ -156,6 +157,7 @@ function uploadHints() {
     document.getElementById('report').disabled = true;
     document.getElementById('abilities').disabled = true;
     document.getElementById('final').disabled = true;
+    document.getElementById('cure').disabled = true;
     document.getElementById('Simulated Twilight Town').disabled = true;
     document.getElementById('100 Acre Wood').disabled = true;
     document.getElementById('Atlantica').disabled = true;
