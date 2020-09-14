@@ -100,6 +100,15 @@ function start() {
     worlds = Object.keys(creatinglists);
 
     worldAndList = creatinglists;
+
+    document.getElementById('page').checked = true;
+    document.getElementById('report').checked = true;
+    document.getElementById('abilities').checked = false;
+    document.getElementById('final').checked = true;
+    document.getElementById('cure').checked = true;
+    document.getElementById('Simulated Twilight Town').checked = true;
+    document.getElementById('100 Acre Wood').checked = true;
+    document.getElementById('Atlantica').checked = false;
 }
   
 function generate() {
