@@ -254,6 +254,11 @@ var finalform = [
     "0000001D"
 ];
 
+var forms = [
+    //Drive Forms
+    "0000001A", "0000001B", "00000233", "0000001F", "0000001D"
+];
+
 var proofs = [
     "00000251", "00000252", "00000253" //connection, nonexistence, peace
 ];
@@ -293,9 +298,31 @@ function getProofs(world) {
     return proof;
 }
 
-//Prioritize worlds/locations with proofs
+//See if world/location has a form
+function getForms(world) {
+    var form = false;
+    for(var i = 0; i < world.length; i++) {
+        if(world.includes(forms[0]) || world.includes(forms[1]) || world.includes(forms[2]) || world.includes(forms[3]) || world.includes(forms[4])) {
+            form = true;
+        }
+    }
+    return form;
+}
+
+//See if world/location has a torn page
+function getPages(world) {
+    var page = false;
+    for(var i = 0; i < world.length; i++) {
+        if(world.includes(tornPages[0])) {
+            page = true;
+        }
+    }
+    return page;
+}
+
+//Prioritize worlds/locations with proofs and/or drive forms and/or torn pages
 function sortWorldLists(proof, worldName) {
-    if(proof) {
+    if(proof && !proofLocations.includes(worldName)) {
         proofLocations.push(worldName);
         var index = allworlds.indexOf(worldName);
         allworlds.splice(index, 1);
@@ -421,6 +448,112 @@ function createHints() {
     var LUproof = getProofs(LU);
     sortWorldLists(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
+
+    if(DFproof) {
+        var AWform = getForms(AW);
+        sortWorldLists(AWform, "100 Acre Wood");
+
+        var ATform = getForms(AT);
+        sortWorldLists(ATform, "Atlantica");
+
+        var STTform = getForms(STT);
+        sortWorldLists(STTform, "Simulated Twilight Town");
+
+        var TTform = getForms(TT);
+        sortWorldLists(TTform, "Twilight Town");
+
+        var HBform = getForms(HB);
+        sortWorldLists(HBform, "Hollow Bastion");
+
+        var BCform = getForms(BC);
+        sortWorldLists(BCform, "Beast's Castle");
+
+        var OCform = getForms(OC);
+        sortWorldLists(OCform, "Olympus Coliseum");
+
+        var AGform = getForms(AG);
+        sortWorldLists(AGform, "Agrabah");
+
+        var LODform = getForms(LOD);
+        sortWorldLists(LODform, "Land of Dragons");
+
+        var PLform = getForms(PL);
+        sortWorldLists(PLform, "Pride Lands");
+
+        var DCform = getForms(DC);
+        sortWorldLists(DCform, "Disney Castle");
+
+        var HTform = getForms(HT);
+        sortWorldLists(HTform, "Halloween Town");
+
+        var PRform = getForms(PR);
+        sortWorldLists(PRform, "Port Royal");
+
+        var SPform = getForms(SP);
+        sortWorldLists(SPform, "Space Paranoids");
+
+        var TWTNWform = getForms(TWTNW);
+        sortWorldLists(TWTNWform, "The World That Never Was");
+
+        var DFform = getForms(DF);
+        sortWorldLists(DFform, "Drive Forms");
+
+        var LUform = getForms(LU);
+        sortWorldLists(LUform, "Sora's Heart");
+    }
+
+    if(AWproof) {
+        var AWpage = getPages(AW);
+        sortWorldLists(AWpage, "100 Acre Wood");
+
+        var ATpage = getPages(AT);
+        sortWorldLists(ATpage, "Atlantica");
+
+        var STTpage = getPages(STT);
+        sortWorldLists(STTpage, "Simulated Twilight Town");
+
+        var TTpage = getPages(TT);
+        sortWorldLists(TTpage, "Twilight Town");
+
+        var HBpage = getPages(HB);
+        sortWorldLists(HBpage, "Hollow Bastion");
+
+        var BCpage = getPages(BC);
+        sortWorldLists(BCpage, "Beast's Castle");
+
+        var OCpage = getPages(OC);
+        sortWorldLists(OCpage, "Olympus Coliseum");
+
+        var AGpage = getPages(AG);
+        sortWorldLists(AGpage, "Agrabah");
+
+        var LODpage = getPages(LOD);
+        sortWorldLists(LODpage, "Land of Dragons");
+
+        var PLpage = getPages(PL);
+        sortWorldLists(PLpage, "Pride Lands");
+
+        var DCpage = getPages(DC);
+        sortWorldLists(DCpage, "Disney Castle");
+
+        var HTpage = getPages(HT);
+        sortWorldLists(HTpage, "Halloween Town");
+
+        var PRpage = getPages(PR);
+        sortWorldLists(PRpage, "Port Royal");
+
+        var SPpage = getPages(SP);
+        sortWorldLists(SPpage, "Space Paranoids");
+
+        var TWTNWpage = getPages(TWTNW);
+        sortWorldLists(TWTNWpage, "The World That Never Was");
+
+        var DFpage = getPages(DF);
+        sortWorldLists(DFpage, "Drive Forms");
+
+        var LUpage = getPages(LU);
+        sortWorldLists(LUpage, "Sora's Heart");
+    }
     
     var worldChecks = {
         "100 Acre Wood" : AWnumber,
