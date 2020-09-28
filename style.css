@@ -73,6 +73,10 @@ button.success:hover {
     background-color: hsl(120, 100%, 83%);
 }
 
+#info, #hide {
+    display: none;
+}
+
 #confirmShare {
     margin-bottom: 0;
 }
@@ -222,8 +226,4 @@ a:visited {
 
 :root[theme="dark"] button.success:hover {
     background-color: hsl(140, 65%, 72%);
-}
-
-#info, #hide {
-    display: none;
 }
