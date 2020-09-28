@@ -223,3 +223,7 @@ a:visited {
 :root[theme="dark"] button.success:hover {
     background-color: hsl(140, 65%, 72%);
 }
+
+#info, #hide {
+    display: none;
+}

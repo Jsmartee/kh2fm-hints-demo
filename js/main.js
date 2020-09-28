@@ -110,6 +110,16 @@ function start() {
     document.getElementById('100 Acre Wood').checked = true;
     document.getElementById('Atlantica').checked = false;
 }
+
+function showInfo() {
+    document.getElementById('info').style.display = "block";
+    document.getElementById('hide').style.display = "inline";
+}
+
+function hideInfo() {
+    document.getElementById('info').style.display = "none";
+    document.getElementById('hide').style.display = "none";
+}
   
 function generate() {
     if(dataArray.length === 0) {
@@ -184,7 +194,8 @@ function shuffle(array) {
     }
     return array;
 }
-  
+
+var high = false;
 //Create location and reward lists
 function getLists() {
     for(var i = 0; i < dataArray.length; i++) {
@@ -192,7 +203,11 @@ function getLists() {
       var row = item.split(',');
       locationList.push(row[2]);
       rewardList.push(row[4]);
+      if(row[0] === "//Remove High Jump LVl") {
+          high = true;
+      }
     }
+    console.log(high);
 }
 
 function reveal(id) {
@@ -605,9 +620,16 @@ function createHints() {
 
     selectedworlds = shuffle(selectedworlds);
 
-    for(var i = 0; i < 13; i++) {
-        hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
-        savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
+    if(high) {
+        for(var i = 0; i < 13; i++) {
+            hints.push(writeHint(selectedworlds[i], 0));
+        }
+    }
+    else {
+        for(var i = 0; i < 13; i++) {
+            hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
+            savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
+        }
     }
 
 }
