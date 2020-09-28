@@ -207,7 +207,6 @@ function getLists() {
           high = true;
       }
     }
-    console.log(high);
 }
 
 function reveal(id) {
