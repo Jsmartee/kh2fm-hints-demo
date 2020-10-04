@@ -26,6 +26,8 @@ Important Checks:
 * 13 Ansem Reports (can be excluded)
 * Second Chance & Once More (can be excluded, will not be hinted if they are on keyblades)
 
+Note: Final Form and Cure can be excluded
+
 Worlds/Locations:
 * 100 Acre Wood (can be excluded)
 * Atlantica (can be excluded)
@@ -43,15 +45,19 @@ Worlds/Locations:
 * Space Paranoids
 * The World That Never Was
 * Drive Forms
-* Sora's Heart (Level Ups)
+* Sora's Heart (Level Ups, can be excluded)
 
 Other notes:
-* The worlds/locations with proofs will always be hinted.
 * The 3 chests in the Garden of Assemblage and the 7 Critical Bonus rewards are not included in any world.
 * Disney Castle and Timeless River are combined into "Disney Castle"
 * Cavern of Remembrance is considered part of "Hollow Bastion"
 * Sora's Heart refers to level ups
 * Absent Silhouettes and Data Org members are included in their respective worlds
+
+Logic:
+* The worlds/locations with proofs will always be hinted.
+* If a proof is from drive forms, all of the forms will be hinted.
+* If a proof is in 100 Acre Wood, all of the torn pages will be hinted.
 
 ## Contributors
 The design of the page was all done by Zax, the creator of the KH2FM Randomizer Item Tracker. Check out his work: [KH2FM Item Tracker](https://tracker.zaxu.xyz/)
