@@ -19,9 +19,9 @@ Here's a tracker made to be compatible with this hint system: https://github.com
 Important Checks:
 * 3 Proofs
 * Promise Charm
-* 5 drive forms
+* 5 drive forms (Final Form can be excluded)
 * 4 summons
-* Magic (18 total)
+* Magic (18 total, Cure can be excluded)
 * 5 Torn Pages (can be excluded)
 * 13 Ansem Reports (can be excluded)
 * Second Chance & Once More (can be excluded, will not be hinted if they are on keyblades)
@@ -43,7 +43,7 @@ Worlds/Locations:
 * Space Paranoids
 * The World That Never Was
 * Drive Forms
-* Sora's Heart (Level Ups)
+* Sora's Heart (Level Ups, can be excluded)
 
 Other notes:
 * The worlds/locations with proofs will always be hinted.
