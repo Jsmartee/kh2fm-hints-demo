@@ -186,6 +186,8 @@ function uploadHints() {
     for(var i = 1; i < 14; i++) {
         document.getElementById('report-' + i).innerHTML = "Click to reveal hint";
     }
+
+    document.getElementById("hintSettings").innerHTML = dataArray[1].toString();
 }
 
 function shuffle(array) {
@@ -634,6 +636,36 @@ function createHints() {
         }
     }
 
+    savedhints.push("\n");
+    savedhints.push("Settings: - ");
+
+    if(document.getElementById('abilities').checked) {
+        savedhints.push("Second Chance & Once More - ");
+    }
+    if(document.getElementById('page').checked) {
+        savedhints.push("Torn Pages - ");
+    }
+    if(document.getElementById('report').checked) {
+        savedhints.push("Secret Ansem Reports - ");
+    }
+    if(document.getElementById('cure').checked) {
+        savedhints.push("Cure - ")
+    }
+    if(document.getElementById('final').checked) {
+        savedhints.push("Final Form - ");
+    }
+    if(document.getElementById("Sora's Heart").checked) {
+        savedhints.push("Sora's Heart - ");
+    }
+    if(document.getElementById("Simulated Twilight Town").checked) {
+        savedhints.push("Simulated Twilight Town - ");
+    }
+    if(document.getElementById('100 Acre Wood').checked) {
+        savedhints.push("100 Acre Wood - ");
+    }
+    if(document.getElementById('Atlantica').checked) {
+        savedhints.push("Atlantica - ");
+    }
 }
 
 //Include or exclude category of items from key items
