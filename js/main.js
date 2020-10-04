@@ -106,6 +106,7 @@ function start() {
     document.getElementById('abilities').checked = false;
     document.getElementById('final').checked = true;
     document.getElementById('cure').checked = true;
+    document.getElementById("Sora's Heart").checked = true;
     document.getElementById('Simulated Twilight Town').checked = true;
     document.getElementById('100 Acre Wood').checked = true;
     document.getElementById('Atlantica').checked = false;
