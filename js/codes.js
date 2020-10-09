@@ -1,3 +1,16 @@
+var Free = [
+    "11CE05E2",
+    "11CE05EE",
+    "11CE05FA",
+    "11D18DDE",
+    "11D18DDC",
+    "11D18DE8",
+    "11D18DE4",
+    "11D18DE6",
+    "11D18DE0",
+    "11D18DE2"
+]
+
 var SimulatedTwilightTown = [
     "11CE016E",
     "11CE017A",

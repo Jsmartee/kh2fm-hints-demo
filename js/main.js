@@ -71,7 +71,7 @@ var worldAndList = [];
 function start() {
     alllists.push(AcreWood, SimulatedTwilightTown, TwilightTown, HollowBastion, BeastsCastle, 
         OlympusColiseum, Agrabah, LandOfDragons, PrideLands, DisneyCastle, 
-        HalloweenTown, PortRoyal, SpaceParanoids, TheWorldThatNeverWas, Forms, Levels, Atlantica);
+        HalloweenTown, PortRoyal, SpaceParanoids, TheWorldThatNeverWas, Forms, Levels, Atlantica, Free);
 
     lists.push(AcreWood, SimulatedTwilightTown, TwilightTown, HollowBastion, BeastsCastle, 
         OlympusColiseum, Agrabah, LandOfDragons, PrideLands, DisneyCastle, 
@@ -95,6 +95,7 @@ function start() {
         "Drive Forms" : Forms,
         "Sora's Heart" : Levels,
         "Atlantica" : Atlantica,
+        "Free" : Free
     }
 
     worlds = Object.keys(creatinglists);
@@ -169,6 +170,19 @@ function uploadHints() {
         }
         hints.push(writeHint(world, number));
     }
+
+    var row2 = dataArray[1].toString().split('.');
+    for(var i = 0; i < row2.length; i++) {
+        var index = row2[i].toString().split(',');
+        var code = index[0];
+        for(var j = 0; j < alllists.length; j++) {
+            if(alllists[j].includes(code)) {
+                var world = worlds[j];
+                reportLocations.push(world);
+            }
+        }
+    }
+
     document.getElementById("upload-btn").classList.add("success");
     document.getElementById('upload-btn').disabled = true;
     document.getElementById('gen').disabled = true;
@@ -187,7 +201,7 @@ function uploadHints() {
         document.getElementById('report-' + i).innerHTML = "Click to reveal hint";
     }
 
-    document.getElementById("hintSettings").innerHTML = dataArray[1].toString();
+    document.getElementById("hintSettings").innerHTML = dataArray[2].toString();
 }
 
 function shuffle(array) {
@@ -214,6 +228,8 @@ function getLists() {
     }
 }
 
+var tries = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+
 function reveal(id) {
     if(dataArray.length === 0) {
         document.getElementById('report-' + id).innerHTML = "No file has been selected.";
@@ -223,8 +239,23 @@ function reveal(id) {
     }
     else {
         var text = document.getElementById('report-' + id);
-        text.innerHTML = hints[id - 1];
-        document.getElementById(id).classList.add("success");
+        var location = document.getElementById("report-" + id + "-location").value;
+        if(location === reportLocations[id - 1]) {
+            text.innerHTML = hints[id - 1];
+            document.getElementById(id).classList.add("success");
+            document.getElementById("report-" + id + "-location").disabled = true;
+        }
+        else {
+            tries[id - 1]++;
+            if(tries[id - 1] === 3) {
+                document.getElementById(id).disabled = true;
+                document.getElementById('report-' + id).innerHTML = "Number of tries exceeded. Button disabled.";
+                document.getElementById("report-" + id + "-location").disabled = true;
+            }
+            else {
+                document.getElementById('report-' + id).innerHTML = "Number of tries remaining: " + (3 - tries[id - 1]);
+            }
+        }
     }
 }
 
@@ -348,6 +379,29 @@ function sortWorldLists(proof, worldName) {
     }
 }
 
+var reportLocations = [];
+
+//finds location of item
+function findLocation(item) {
+    var locationCode;
+    var location;
+    for(var i = 0; i < rewardList.length; i++) {
+        if(rewardList[i] === item) {
+            for(var j = 0; j < alllists.length; j++) {
+                if(alllists[j].includes(locationList[i])) { //this check is mainly for levels
+                    locationCode = locationList[i];
+                }
+            }
+        }
+    }
+    for(var j = 0; j < alllists.length; j++) {
+        if(alllists[j].includes(locationCode)) {
+            location = Object.keys(worldAndList).find(key => worldAndList[key] === alllists[j]);
+        }
+    }
+    return location;
+}
+
 function writeHint(world, number) {
     switch(number) {
         case 0:
@@ -467,6 +521,8 @@ function createHints() {
     var LUproof = getProofs(LU);
     sortWorldLists(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
+
+    var Fcode = Free[Math.floor(Math.random() * 4)];
 
     if(DFproof) {
         var AWform = getForms(AW);
@@ -611,7 +667,8 @@ function createHints() {
         "Space Paranoids" : SPcode,
         "The World That Never Was" : TWTNWcode,
         "Drive Forms" : DFcode,
-        "Sora's Heart" : LUcode 
+        "Sora's Heart" : LUcode,
+        "Free" : Fcode
     }
 
     shuffallworlds = shuffle(allworlds);
@@ -623,6 +680,11 @@ function createHints() {
     }
 
     selectedworlds = shuffle(selectedworlds);
+
+    //get report locations
+    for(var j = 0; j < ansemReports.length; j++) {
+        reportLocations.push(findLocation(ansemReports[j]));
+    }
 
     if(high) {
         for(var i = 0; i < 13; i++) {
@@ -637,7 +699,12 @@ function createHints() {
     }
 
     savedhints.push("\n");
-    savedhints.push("Settings: - ");
+    for(var i = 0; i < 13; i++) {
+        savedhints.push(codeChecks[reportLocations[i]] + ".");
+    }
+
+    savedhints.push("\n");
+    savedhints.push("Shared Hint Settings: - ");
 
     if(document.getElementById('abilities').checked) {
         savedhints.push("Second Chance & Once More - ");

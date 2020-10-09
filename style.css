@@ -37,7 +37,7 @@ section {
     border-radius: 3px;
 }
 
-button {
+button, select {
     border-radius: 3px;
     padding: 6px 15px;
     border: 0;
@@ -205,6 +205,12 @@ a:visited {
 }
 
 :root[theme="dark"] table button {
+    background-color: #464646;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+:root[theme="dark"] table select {
     background-color: #464646;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
