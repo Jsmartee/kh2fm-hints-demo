@@ -122,6 +122,16 @@ function hideInfo() {
     document.getElementById('info').style.display = "none";
     document.getElementById('hide').style.display = "none";
 }
+
+function showChange() {
+    document.getElementById('changelog').style.display = "block";
+    document.getElementById('hideChange').style.display = "inline";
+}
+
+function hideChange() {
+    document.getElementById('changelog').style.display = "none";
+    document.getElementById('hideChange').style.display = "none";
+}
   
 function generate() {
     if(dataArray.length === 0) {
