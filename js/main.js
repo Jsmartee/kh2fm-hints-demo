@@ -102,6 +102,7 @@ function start() {
 
     worldAndList = creatinglists;
 
+    document.getElementById('promisecharm').disabled = false;
     document.getElementById('page').checked = true;
     document.getElementById('report').checked = true;
     document.getElementById('abilities').checked = false;
@@ -132,6 +133,7 @@ function generate() {
         document.getElementById('gen').disabled = true;
         document.getElementById('confirmGen').innerHTML = "Hints have been generated! To play another seed, refresh the page.";
         document.getElementById('confirmShare').innerHTML = "Hints have been generated! Click Save Hints to send them to other players.";
+        document.getElementById('promisecharm').disabled = true;
         document.getElementById('page').disabled = true;
         document.getElementById('report').disabled = true;
         document.getElementById('abilities').disabled = true;
@@ -188,6 +190,7 @@ function uploadHints() {
     document.getElementById('gen').disabled = true;
     document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
     document.getElementById('confirmGen').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
+    document.getElementById('promisecharm').disabled = true;
     document.getElementById('page').disabled = true;
     document.getElementById('report').disabled = true;
     document.getElementById('abilities').disabled = true;
@@ -706,6 +709,9 @@ function createHints() {
     savedhints.push("\n");
     savedhints.push("Shared Hint Settings: - ");
 
+    if(document.getElementById('promisecharm').checked) {
+        savedhints.push("Promise Charm - ")
+    }
     if(document.getElementById('abilities').checked) {
         savedhints.push("Second Chance & Once More - ");
     }
