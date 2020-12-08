@@ -106,8 +106,8 @@ var SimulatedTwilightTown = [
     "21D11278",
     "11CE0636",
     "11CE0606",
-    "11CE0612",
-    "11CE061E",
+    "11CE0612", //champion belt
+    "11CE061E", //medal
     "11CE062A",
     "11CE0642",
     "11CE064E",
