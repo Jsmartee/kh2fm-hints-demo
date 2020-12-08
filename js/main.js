@@ -47,7 +47,7 @@ function start() {
 
     worldAndList = creatinglists;
 
-    document.getElementById('promisecharm').disabled = false;
+    document.getElementById('promisecharm').checked = false;
     document.getElementById('page').checked = true;
     document.getElementById('report').checked = true;
     document.getElementById('abilities').checked = false;
