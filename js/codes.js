@@ -1,3 +1,72 @@
+var keyItems = [
+    //Proofs and Promise Charm
+    "00000251", "00000252", "00000253", "0000020C",
+
+    //Drive Forms
+    "0000001A", "0000001B", "00000233", "0000001F", "0000001D",
+
+    //Summons
+    "0000017F", "00000019", "0000009F", "000000A0",
+
+    //Magic
+    "00000015", "00000016", "00000017", "00000018", "00000057", "00000058",
+
+    //Torn Pages
+    "00000020",
+
+    //Ansem Reports
+    "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE",
+];
+
+var ansemReports = [
+    "000000E2", "000000E3", "000000E4", "000000E5", "000000E6", "000000E7", "000000E8", "000000E9", "000000EA", "000000EB", "000000EC", "000000ED", "000000EE"
+];
+
+var tornPages = [
+    "00000020"
+];
+
+var abilities = [
+    "0000019F", "000001A0" //Second Chance & Once More
+];
+
+var cure = [
+    "00000018"
+];
+
+var finalform = [
+    "0000001D"
+];
+
+var forms = [
+    //Drive Forms
+    "0000001A", "0000001B", "00000233", "0000001F", "0000001D"
+];
+
+var proofs = [
+    "00000251", "00000252", "00000253" //connection, nonexistence, peace
+];
+
+
+var allworlds = [
+    "100 Acre Wood", 
+    "Simulated Twilight Town", 
+    "Twilight Town", 
+    "Hollow Bastion", 
+    "Beast's Castle", 
+    "Olympus Coliseum", 
+    "Agrabah", 
+    "Land of Dragons", 
+    "Pride Lands",
+    "Disney Castle", 
+    "Halloween Town", 
+    "Port Royal", 
+    "Space Paranoids", 
+    "The World That Never Was", 
+    "Drive Forms", 
+    "Sora's Heart"
+];
+
 var Free = [
     "11CE05E2",
     "11CE05EE",
@@ -663,6 +732,4 @@ var Levels = [
     "11D0BCB0",
     "11D0BCC0",
     "11D0BCD0"
-
-
 ]
