@@ -1,6 +1,6 @@
 var keyItems = [
     //Proofs and Promise Charm
-    "00000251", "00000252", "00000253", "0000020C",
+    "00000251", "00000252", "00000253",
 
     //Drive Forms
     "0000001A", "0000001B", "00000233", "0000001F", "0000001D",
@@ -45,6 +45,10 @@ var forms = [
 
 var proofs = [
     "00000251", "00000252", "00000253" //connection, nonexistence, peace
+];
+
+var charm = [
+    "0000020C"
 ];
 
 

@@ -660,6 +660,10 @@ function include(id) {
             case 'cure':
                 keyItems = keyItems.concat(cure);
                 break;
+
+            case 'promisecharm':
+                keyItems = keyItems.concat(charm);
+                break;
         }
     }
     else {
@@ -686,6 +690,11 @@ function include(id) {
 
             case 'cure':
                 var index = keyItems.indexOf(cure[0]);
+                keyItems.splice(index, 1);
+                break;
+
+            case 'promisecharm':
+                var index = keyItems.indexOf(charm[0]);
                 keyItems.splice(index, 1);
                 break;
         }
