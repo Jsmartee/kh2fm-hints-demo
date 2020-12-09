@@ -651,13 +651,13 @@ function createHints() {
     if(terraHint || shroomHint) {
         while(terraHint || shroomHint) {
             selectedworlds = shuffle(selectedworlds);
-            if(selectedworlds[indexTerra1] === "Disney Castle" || selectedworlds[indexTerra2] === "Disney Castle") {
+            if(selectedworlds[indexTerra1] === proofLocations[0] || selectedworlds[indexTerra2] === proofLocations[0]) {
                 terraHint = true;
             }
             else {
                 terraHint = false;
             }
-            if(selectedworlds[indexShroom1] === "Hollow Bastion" || selectedworlds[indexShroom2] === "Hollow Bastion") {
+            if(selectedworlds[indexShroom1] === proofLocations[2] || selectedworlds[indexShroom2] === proofLocations[2]) {
                 shroomHint = true;
             }
             else {
