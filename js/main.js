@@ -270,8 +270,8 @@ function getPages(world) {
 }
 
 //Prioritize worlds/locations with proofs and/or drive forms and/or torn pages
-function sortWorldLists(proof, worldName) {
-    if(proof && !priorityWorlds.includes(worldName)) {
+function prioritizeWorld(item, worldName) {
+    if(item && !priorityWorlds.includes(worldName)) {
         priorityWorlds.push(worldName);
         var index = allworlds.indexOf(worldName);
         allworlds.splice(index, 1);
@@ -334,227 +334,227 @@ function createHints() {
     var AWcode = AcreWood[Math.floor(Math.random() * 4)];
     var AWproof = getProofs(AW);
     sortProofLocations(AWproof, AW, "100 Acre Wood");
-    sortWorldLists(AWproof, "100 Acre Wood");
+    prioritizeWorld(AWproof, "100 Acre Wood");
     var AWnumber = numberOfChecks(AW);
 
     var AT = createWorldList(Atlantica);
     var ATcode = Atlantica[Math.floor(Math.random() * 4)];
     var ATproof = getProofs(AT);
     sortProofLocations(ATproof, AT, "Atlantica");
-    sortWorldLists(ATproof, "Atlantica");
+    prioritizeWorld(ATproof, "Atlantica");
     var ATnumber = numberOfChecks(AT);
 
     var STT = createWorldList(SimulatedTwilightTown);
     var STTcode = SimulatedTwilightTown[Math.floor(Math.random() * 4)];
     var STTproof = getProofs(STT);
     sortProofLocations(STTproof, STT, "Simulated Twilight Town");
-    sortWorldLists(STTproof, "Simulated Twilight Town");
+    prioritizeWorld(STTproof, "Simulated Twilight Town");
     var STTnumber = numberOfChecks(STT);
 
     var TT = createWorldList(TwilightTown);
     var TTcode = TwilightTown[Math.floor(Math.random() * 4)];
     var TTproof = getProofs(TT);
     sortProofLocations(TTproof, TT, "Twilight Town");
-    sortWorldLists(TTproof, "Twilight Town");
+    prioritizeWorld(TTproof, "Twilight Town");
     var TTnumber = numberOfChecks(TT);
 
     var HB = createWorldList(HollowBastion);
     var HBcode = HollowBastion[Math.floor(Math.random() * 4)];
     var HBproof = getProofs(HB);
     sortProofLocations(HBproof, HB, "Hollow Bastion");
-    sortWorldLists(HBproof, "Hollow Bastion");
+    prioritizeWorld(HBproof, "Hollow Bastion");
     var HBnumber = numberOfChecks(HB);
 
     var BC = createWorldList(BeastsCastle);
     var BCcode = BeastsCastle[Math.floor(Math.random() * 4)];
     var BCproof = getProofs(BC);
     sortProofLocations(BCproof, BC, "Beast's Castle");
-    sortWorldLists(BCproof, "Beast's Castle");
+    prioritizeWorld(BCproof, "Beast's Castle");
     var BCnumber = numberOfChecks(BC);
 
     var OC = createWorldList(OlympusColiseum);
     var OCcode = OlympusColiseum[Math.floor(Math.random() * 4)];
     var OCproof = getProofs(OC);
     sortProofLocations(OCproof, OC, "Olympus Coliseum");
-    sortWorldLists(OCproof, "Olympus Coliseum");
+    prioritizeWorld(OCproof, "Olympus Coliseum");
     var OCnumber = numberOfChecks(OC);
 
     var AG = createWorldList(Agrabah);
     var AGcode = Agrabah[Math.floor(Math.random() * 4)];
     var AGproof = getProofs(AG);
     sortProofLocations(AGproof, AG, "Agrabah");
-    sortWorldLists(AGproof, "Agrabah");
+    prioritizeWorld(AGproof, "Agrabah");
     var AGnumber = numberOfChecks(AG);
 
     var LOD = createWorldList(LandOfDragons);
     var LODcode = LandOfDragons[Math.floor(Math.random() * 4)];
     var LODproof = getProofs(LOD);
     sortProofLocations(LODproof, LOD, "Land of Dragons");
-    sortWorldLists(LODproof, "Land of Dragons");
+    prioritizeWorld(LODproof, "Land of Dragons");
     var LODnumber = numberOfChecks(LOD);
 
     var PL = createWorldList(PrideLands);
     var PLcode = PrideLands[Math.floor(Math.random() * 4)];
     var PLproof = getProofs(PL);
     sortProofLocations(PLproof, PL, "Pride Lands");
-    sortWorldLists(PLproof, "Pride Lands");
+    prioritizeWorld(PLproof, "Pride Lands");
     var PLnumber = numberOfChecks(PL);
 
     var DC = createWorldList(DisneyCastle);
     var DCcode = DisneyCastle[Math.floor(Math.random() * 4)];
     var DCproof = getProofs(DC);
     sortProofLocations(DCproof, DC, "Disney Castle");
-    sortWorldLists(DCproof, "Disney Castle");
+    prioritizeWorld(DCproof, "Disney Castle");
     var DCnumber = numberOfChecks(DC);
 
     var HT = createWorldList(HalloweenTown);
     var HTcode = HalloweenTown[Math.floor(Math.random() * 4)];
     var HTproof = getProofs(HT);
     sortProofLocations(HTproof, HT, "Halloween Town");
-    sortWorldLists(HTproof, "Halloween Town");
+    prioritizeWorld(HTproof, "Halloween Town");
     var HTnumber = numberOfChecks(HT);
 
     var PR = createWorldList(PortRoyal);
     var PRcode = PortRoyal[Math.floor(Math.random() * 4)];
     var PRproof = getProofs(PR);
     sortProofLocations(PRproof, PR, "Port Royal");
-    sortWorldLists(PRproof, "Port Royal");
+    prioritizeWorld(PRproof, "Port Royal");
     var PRnumber = numberOfChecks(PR);
 
     var SP = createWorldList(SpaceParanoids);
     var SPcode = SpaceParanoids[Math.floor(Math.random() * 4)];
     var SPproof = getProofs(SP);
     sortProofLocations(SPproof, SP, "Space Paranoids");
-    sortWorldLists(SPproof, "Space Paranoids");
+    prioritizeWorld(SPproof, "Space Paranoids");
     var SPnumber = numberOfChecks(SP);
 
     var TWTNW = createWorldList(TheWorldThatNeverWas);
     var TWTNWcode = TheWorldThatNeverWas[Math.floor(Math.random() * 4)];
     var TWTNWproof = getProofs(TWTNW);
     sortProofLocations(TWTNWproof, TWTNW, "The World That Never Was");
-    sortWorldLists(TWTNWproof, "The World That Never Was");
+    prioritizeWorld(TWTNWproof, "The World That Never Was");
     var TWTNWnumber = numberOfChecks(TWTNW);
 
     var DF = createWorldList(Forms);
     var DFcode = Forms[Math.floor(Math.random() * 4)];
     var DFproof = getProofs(DF);
     sortProofLocations(DFproof, DF, "Drive Forms");
-    sortWorldLists(DFproof, "Drive Forms");
+    prioritizeWorld(DFproof, "Drive Forms");
     var DFnumber = numberOfChecks(DF);
 
     var LU = createWorldList(Levels);
     var LUcode = Levels[Math.floor(Math.random() * 4)];
     var LUproof = getProofs(LU);
     sortProofLocations(LUproof, LU, "Sora's Heart");
-    sortWorldLists(LUproof, "Sora's Heart");
+    prioritizeWorld(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
 
     var Fcode = Free[Math.floor(Math.random() * 4)];
 
     if(DFproof) {
         var AWform = getForms(AW);
-        sortWorldLists(AWform, "100 Acre Wood");
+        prioritizeWorld(AWform, "100 Acre Wood");
 
         var ATform = getForms(AT);
-        sortWorldLists(ATform, "Atlantica");
+        prioritizeWorld(ATform, "Atlantica");
 
         var STTform = getForms(STT);
-        sortWorldLists(STTform, "Simulated Twilight Town");
+        prioritizeWorld(STTform, "Simulated Twilight Town");
 
         var TTform = getForms(TT);
-        sortWorldLists(TTform, "Twilight Town");
+        prioritizeWorld(TTform, "Twilight Town");
 
         var HBform = getForms(HB);
-        sortWorldLists(HBform, "Hollow Bastion");
+        prioritizeWorld(HBform, "Hollow Bastion");
 
         var BCform = getForms(BC);
-        sortWorldLists(BCform, "Beast's Castle");
+        prioritizeWorld(BCform, "Beast's Castle");
 
         var OCform = getForms(OC);
-        sortWorldLists(OCform, "Olympus Coliseum");
+        prioritizeWorld(OCform, "Olympus Coliseum");
 
         var AGform = getForms(AG);
-        sortWorldLists(AGform, "Agrabah");
+        prioritizeWorld(AGform, "Agrabah");
 
         var LODform = getForms(LOD);
-        sortWorldLists(LODform, "Land of Dragons");
+        prioritizeWorld(LODform, "Land of Dragons");
 
         var PLform = getForms(PL);
-        sortWorldLists(PLform, "Pride Lands");
+        prioritizeWorld(PLform, "Pride Lands");
 
         var DCform = getForms(DC);
-        sortWorldLists(DCform, "Disney Castle");
+        prioritizeWorld(DCform, "Disney Castle");
 
         var HTform = getForms(HT);
-        sortWorldLists(HTform, "Halloween Town");
+        prioritizeWorld(HTform, "Halloween Town");
 
         var PRform = getForms(PR);
-        sortWorldLists(PRform, "Port Royal");
+        prioritizeWorld(PRform, "Port Royal");
 
         var SPform = getForms(SP);
-        sortWorldLists(SPform, "Space Paranoids");
+        prioritizeWorld(SPform, "Space Paranoids");
 
         var TWTNWform = getForms(TWTNW);
-        sortWorldLists(TWTNWform, "The World That Never Was");
+        prioritizeWorld(TWTNWform, "The World That Never Was");
 
         var DFform = getForms(DF);
-        sortWorldLists(DFform, "Drive Forms");
+        prioritizeWorld(DFform, "Drive Forms");
 
         var LUform = getForms(LU);
-        sortWorldLists(LUform, "Sora's Heart");
+        prioritizeWorld(LUform, "Sora's Heart");
     }
 
     if(AWproof) {
         var AWpage = getPages(AW);
-        sortWorldLists(AWpage, "100 Acre Wood");
+        prioritizeWorld(AWpage, "100 Acre Wood");
 
         var ATpage = getPages(AT);
-        sortWorldLists(ATpage, "Atlantica");
+        prioritizeWorld(ATpage, "Atlantica");
 
         var STTpage = getPages(STT);
-        sortWorldLists(STTpage, "Simulated Twilight Town");
+        prioritizeWorld(STTpage, "Simulated Twilight Town");
 
         var TTpage = getPages(TT);
-        sortWorldLists(TTpage, "Twilight Town");
+        prioritizeWorld(TTpage, "Twilight Town");
 
         var HBpage = getPages(HB);
-        sortWorldLists(HBpage, "Hollow Bastion");
+        prioritizeWorld(HBpage, "Hollow Bastion");
 
         var BCpage = getPages(BC);
-        sortWorldLists(BCpage, "Beast's Castle");
+        prioritizeWorld(BCpage, "Beast's Castle");
 
         var OCpage = getPages(OC);
-        sortWorldLists(OCpage, "Olympus Coliseum");
+        prioritizeWorld(OCpage, "Olympus Coliseum");
 
         var AGpage = getPages(AG);
-        sortWorldLists(AGpage, "Agrabah");
+        prioritizeWorld(AGpage, "Agrabah");
 
         var LODpage = getPages(LOD);
-        sortWorldLists(LODpage, "Land of Dragons");
+        prioritizeWorld(LODpage, "Land of Dragons");
 
         var PLpage = getPages(PL);
-        sortWorldLists(PLpage, "Pride Lands");
+        prioritizeWorld(PLpage, "Pride Lands");
 
         var DCpage = getPages(DC);
-        sortWorldLists(DCpage, "Disney Castle");
+        prioritizeWorld(DCpage, "Disney Castle");
 
         var HTpage = getPages(HT);
-        sortWorldLists(HTpage, "Halloween Town");
+        prioritizeWorld(HTpage, "Halloween Town");
 
         var PRpage = getPages(PR);
-        sortWorldLists(PRpage, "Port Royal");
+        prioritizeWorld(PRpage, "Port Royal");
 
         var SPpage = getPages(SP);
-        sortWorldLists(SPpage, "Space Paranoids");
+        prioritizeWorld(SPpage, "Space Paranoids");
 
         var TWTNWpage = getPages(TWTNW);
-        sortWorldLists(TWTNWpage, "The World That Never Was");
+        prioritizeWorld(TWTNWpage, "The World That Never Was");
 
         var DFpage = getPages(DF);
-        sortWorldLists(DFpage, "Drive Forms");
+        prioritizeWorld(DFpage, "Drive Forms");
 
         var LUpage = getPages(LU);
-        sortWorldLists(LUpage, "Sora's Heart");
+        prioritizeWorld(LUpage, "Sora's Heart");
     }
     
     var worldChecks = {
