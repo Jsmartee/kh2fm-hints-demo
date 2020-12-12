@@ -568,6 +568,10 @@ function createHints() {
     if(AWproof) {
         prioritizePages();
     }
+
+    if(ATproof) {
+        prioritizeAtlantica();
+    }
     
     var worldChecks = {
         "100 Acre Wood" : AWnumber,

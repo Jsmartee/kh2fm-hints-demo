@@ -133,6 +133,218 @@ function prioritizePages() {
     prioritizeWorld(LUpage, "Sora's Heart");
 }
 
+function prioritizeAtlantica() {
+    var AWthunder = false;
+    var ATthunder = false;
+    var STTthunder = false;
+    var TTthunder = false;
+    var HBthunder = false;
+    var BCthunder = false;
+    var OCthunder = false;
+    var AGthunder = false;
+    var LODthunder = false;
+    var PLthunder = false;
+    var DCthunder = false;
+    var HTthunder = false;
+    var PRthunder = false;
+    var SPthunder = false;
+    var TWTNWthunder = false;
+    var DFthunder = false;
+    var LUthunder = false;
+
+    var AWmagnet = false;
+    var ATmagnet = false;
+    var STTmagnet = false;
+    var TTmagnet = false;
+    var HBmagnet = false;
+    var BCmagnet = false;
+    var OCmagnet = false;
+    var AGmagnet = false;
+    var LODmagnet = false;
+    var PLmagnet = false;
+    var DCmagnet = false;
+    var HTmagnet = false;
+    var PRmagnet = false;
+    var SPmagnet = false;
+    var TWTNWmagnet = false;
+    var DFmagnet = false;
+    var LUmagnet = false;
+
+    //Thunder
+
+    if(AW.includes("00000017")) {
+        AWthunder = true;
+        prioritizeWorld(AWthunder, "100 Acre Wood");
+    }
+
+    if(AT.includes("00000017")) {
+        ATthunder = true;
+        prioritizeWorld(ATthunder, "Atlantica");
+    }
+
+    if(STT.includes("00000017")) {
+        STTthunder = true;
+        prioritizeWorld(STTthunder, "Simulated Twilight Town");
+    }
+
+    if(TT.includes("00000017")) {
+        TTthunder = true;
+        prioritizeWorld(TTthunder, "Twilight Town");
+    }
+
+    if(HB.includes("00000017")) {
+        HBthunder = true;
+        prioritizeWorld(HBthunder, "Hollow Bastion");
+    }
+
+    if(BC.includes("00000017")) {
+        BCthunder = true;
+        prioritizeWorld(BCthunder, "Beast's Castle");
+    }
+
+    if(OC.includes("00000017")) {
+        OCthunder = true;
+        prioritizeWorld(OCthunder, "Olympus Coliseum");
+    }
+
+    if(AG.includes("00000017")) {
+        AGthunder = true;
+        prioritizeWorld(AGthunder, "Agrabah");
+    }
+
+    if(LOD.includes("00000017")) {
+        LODthunder = true;
+        prioritizeWorld(LODthunder, "Land of Dragons");
+    }
+
+    if(PL.includes("00000017")) {
+        PLthunder = true;
+        prioritizeWorld(PLthunder, "Pride Lands");
+    }
+
+    if(DC.includes("00000017")) {
+        DCthunder = true;
+        prioritizeWorld(DCthunder, "Disney Castle");
+    }
+
+    if(HT.includes("00000017")) {
+        HTthunder = true;
+        prioritizeWorld(HTthunder, "Halloween Town");
+    }
+
+    if(PR.includes("00000017")) {
+        PRthunder = true;
+        prioritizeWorld(PRthunder, "Port Royal");
+    }
+
+    if(SP.includes("00000017")) {
+        SPthunder = true;
+        prioritizeWorld(SPthunder, "Space Paranoids");
+    }
+
+    if(TWTNW.includes("00000017")) {
+        TWTNWthunder = true;
+        prioritizeWorld(TWTNWthunder, "The World That Never Was");
+    }
+
+    if(DF.includes("00000017")) {
+        DFthunder = true;
+        prioritizeWorld(DFthunder, "Drive Forms");
+    }
+
+    if(LU.includes("00000017")) {
+        LUthunder = true;
+        prioritizeWorld(LUthunder, "Sora's Heart");
+    }
+
+    //Magnet
+
+    if(AW.includes("00000057")) {
+        AWmagnet = true;
+        prioritizeWorld(AWmagnet, "100 Acre Wood");
+    }
+
+    if(AT.includes("00000057")) {
+        ATmagnet = true;
+        prioritizeWorld(ATmagnet, "Atlantica");
+    }
+
+    if(STT.includes("00000057")) {
+        STTmagnet = true;
+        prioritizeWorld(STTmagnet, "Simulated Twilight Town");
+    }
+
+    if(TT.includes("00000057")) {
+        TTmagnet = true;
+        prioritizeWorld(TTmagnet, "Twilight Town");
+    }
+
+    if(HB.includes("00000057")) {
+        HBmagnet = true;
+        prioritizeWorld(HBmagnet, "Hollow Bastion");
+    }
+
+    if(BC.includes("00000057")) {
+        BCmagnet = true;
+        prioritizeWorld(BCmagnet, "Beast's Castle");
+    }
+
+    if(OC.includes("00000057")) {
+        OCmagnet = true;
+        prioritizeWorld(OCmagnet, "Olympus Coliseum");
+    }
+
+    if(AG.includes("00000057")) {
+        AGmagnet = true;
+        prioritizeWorld(AGmagnet, "Agrabah");
+    }
+
+    if(LOD.includes("00000057")) {
+        LODmagnet = true;
+        prioritizeWorld(LODmagnet, "Land of Dragons");
+    }
+
+    if(PL.includes("00000057")) {
+        PLmagnet = true;
+        prioritizeWorld(PLmagnet, "Pride Lands");
+    }
+
+    if(DC.includes("00000057")) {
+        DCmagnet = true;
+        prioritizeWorld(DCmagnet, "Disney Castle");
+    }
+
+    if(HT.includes("00000057")) {
+        HTmagnet = true;
+        prioritizeWorld(HTmagnet, "Halloween Town");
+    }
+
+    if(PR.includes("00000057")) {
+        PRmagnet = true;
+        prioritizeWorld(PRmagnet, "Port Royal");
+    }
+
+    if(SP.includes("00000057")) {
+        SPmagnet = true;
+        prioritizeWorld(SPmagnet, "Space Paranoids");
+    }
+
+    if(TWTNW.includes("00000057")) {
+        TWTNWmagnet = true;
+        prioritizeWorld(TWTNWmagnet, "The World That Never Was");
+    }
+
+    if(DF.includes("00000057")) {
+        DFmagnet = true;
+        prioritizeWorld(DFmagnet, "Drive Forms");
+    }
+
+    if(LU.includes("00000057")) {
+        LUmagnet = true;
+        prioritizeWorld(LUmagnet, "Sora's Heart");
+    }
+}
+
 var shroomReport;
 var shroomHint;
 var terraReport;
