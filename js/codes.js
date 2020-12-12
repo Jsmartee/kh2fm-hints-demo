@@ -52,26 +52,6 @@ var charm = [
     "0000020C"
 ];
 
-
-var allworlds = [
-    "100 Acre Wood", 
-    "Simulated Twilight Town", 
-    "Twilight Town", 
-    "Hollow Bastion", 
-    "Beast's Castle", 
-    "Olympus Coliseum", 
-    "Agrabah", 
-    "Land of Dragons", 
-    "Pride Lands",
-    "Disney Castle", 
-    "Halloween Town", 
-    "Port Royal", 
-    "Space Paranoids", 
-    "The World That Never Was", 
-    "Drive Forms", 
-    "Sora's Heart"
-];
-
 var Free = [
     "11CE05E2",
     "11CE05EE",
