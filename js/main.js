@@ -632,6 +632,9 @@ function createHints() {
     //check for connection hint locked on terra or peace hint locked on shroom
     selectedworlds = checkTerraShroomReports(selectedworlds);
 
+    //check that reports pointing to proofs are hinted
+    selectedworlds = hintProofReports(selectedworlds);
+
     if(high) {
         for(var i = 0; i < 13; i++) {
             hints.push(writeHint(selectedworlds[i], 0));

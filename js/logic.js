@@ -403,3 +403,86 @@ function checkTerraShroomReports(worlds) {
 
     return hintedWorlds;
 }
+
+//Make sure reports pointing to hints are hinted
+function hintProofReports(worlds) {
+    var hintedWorlds = worlds;
+
+    //get indexes of reports pointing to proofs
+    var proofReportIndex1;
+    var proofReportIndex2;
+    var proofReportIndex3;
+
+    for(var i = 0; i < hintedWorlds.length; i++) {
+        if(hintedWorlds[i] === proofLocations[0]) {
+            proofReportIndex1 = i;
+        }
+        if(hintedWorlds[i] === proofLocations[1]) {
+            proofReportIndex2 = i;
+        }
+        if(hintedWorlds[i] === proofLocations[2]) {
+            proofReportIndex3 = i;
+        }
+    }
+
+    //get location of reports pointing to proofs
+    var reportProof1 = reportLocations[proofReportIndex1];
+    var reportProof2 = reportLocations[proofReportIndex2];
+    var reportProof3 = reportLocations[proofReportIndex3];
+
+    //if reports are not all hinted, put them into the pool of hinted worlds
+    if(!hintedWorlds.includes(reportProof1) || !hintedWorlds.includes(reportProof2) || !hintedWorlds.includes(reportProof3)) {
+        if(priorityWorlds.length != 13) {
+
+            if(!hintedWorlds.includes(reportProof1)) {
+                var index = Math.floor(Math.random() * 13);
+                var priorityWorldIndex = true;
+    
+                while(priorityWorldIndex) {
+                    if(!priorityWorlds.includes(hintedWorlds[index])) {
+                        hintedWorlds[index] = reportProof1;
+                        priorityWorldIndex = false;
+                    }
+                    else {
+                        priorityWorldIndex = true;
+                        index = Math.floor(Math.random() * 13);
+                    }
+                }
+                
+            }
+            if(!hintedWorlds.includes(reportProof2)) {
+                var index = Math.floor(Math.random() * 13);
+                var priorityWorldIndex = true;
+    
+                while(priorityWorldIndex) {
+                    if(!priorityWorlds.includes(hintedWorlds[index])) {
+                        hintedWorlds[index] = reportProof2;
+                        priorityWorldIndex = false;
+                    }
+                    else {
+                        priorityWorldIndex = true;
+                        index = Math.floor(Math.random() * 13);
+                    }
+                }
+            }
+            if(!hintedWorlds.includes(reportProof3)) {
+                var index = Math.floor(Math.random() * 13);
+                var priorityWorldIndex = true;
+    
+                while(priorityWorldIndex) {
+                    if(!priorityWorlds.includes(hintedWorlds[index])) {
+                        hintedWorlds[index] = reportProof3;
+                        priorityWorldIndex = false;
+                    }
+                    else {
+                        priorityWorldIndex = true;
+                        index = Math.floor(Math.random() * 13);
+                    }
+                }
+            }
+        }
+        
+    }
+
+    return hintedWorlds;
+}
