@@ -404,9 +404,11 @@ function checkTerraShroomReports(worlds) {
     return hintedWorlds;
 }
 
-//Make sure reports pointing to hints are hinted
+var priorityWorlds2;
+//Make sure reports pointing to proofs are hinted
 function hintProofReports(worlds) {
     var hintedWorlds = worlds;
+    priorityWorlds2 = priorityWorlds;
 
     //get indexes of reports pointing to proofs
     var proofReportIndex1;
@@ -432,16 +434,18 @@ function hintProofReports(worlds) {
 
     //if reports are not all hinted, put them into the pool of hinted worlds
     if(!hintedWorlds.includes(reportProof1) || !hintedWorlds.includes(reportProof2) || !hintedWorlds.includes(reportProof3)) {
-        if(priorityWorlds.length != 13) {
 
-            if(!hintedWorlds.includes(reportProof1)) {
+        if(priorityWorlds2.length <= 13) {
+
+            if(!hintedWorlds.includes(reportProof1) && reportProof1 != "Free") {
                 var index = Math.floor(Math.random() * 13);
                 var priorityWorldIndex = true;
     
                 while(priorityWorldIndex) {
-                    if(!priorityWorlds.includes(hintedWorlds[index])) {
+                    if(!priorityWorlds2.includes(hintedWorlds[index])) {
                         hintedWorlds[index] = reportProof1;
                         priorityWorldIndex = false;
+                        priorityWorlds2.push(reportProof1);
                     }
                     else {
                         priorityWorldIndex = true;
@@ -450,14 +454,15 @@ function hintProofReports(worlds) {
                 }
                 
             }
-            if(!hintedWorlds.includes(reportProof2)) {
+            if(!hintedWorlds.includes(reportProof2) && reportProof2 != "Free") {
                 var index = Math.floor(Math.random() * 13);
                 var priorityWorldIndex = true;
     
                 while(priorityWorldIndex) {
-                    if(!priorityWorlds.includes(hintedWorlds[index])) {
+                    if(!priorityWorlds2.includes(hintedWorlds[index])) {
                         hintedWorlds[index] = reportProof2;
                         priorityWorldIndex = false;
+                        priorityWorlds2.push(reportProof2);
                     }
                     else {
                         priorityWorldIndex = true;
@@ -465,14 +470,15 @@ function hintProofReports(worlds) {
                     }
                 }
             }
-            if(!hintedWorlds.includes(reportProof3)) {
+            if(!hintedWorlds.includes(reportProof3) && reportProof3 != "Free") {
                 var index = Math.floor(Math.random() * 13);
                 var priorityWorldIndex = true;
     
                 while(priorityWorldIndex) {
-                    if(!priorityWorlds.includes(hintedWorlds[index])) {
+                    if(!priorityWorlds2.includes(hintedWorlds[index])) {
                         hintedWorlds[index] = reportProof3;
                         priorityWorldIndex = false;
+                        priorityWorlds2.push(reportProof3);
                     }
                     else {
                         priorityWorldIndex = true;
@@ -480,6 +486,7 @@ function hintProofReports(worlds) {
                     }
                 }
             }
+            
         }
         
     }
