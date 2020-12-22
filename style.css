@@ -178,6 +178,34 @@ a:visited {
     color: green;
 }
 
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .nav li {
+    float: left;
+  }
+  
+  .nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .nav li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .nav .active {
+    background-color: hsl(210, 70%, 60%);
+  }
+
 @media screen and (max-width: 450px) {
     section {
         flex-direction: column;
@@ -242,4 +270,12 @@ a:visited {
 
 :root[theme="dark"] button.success:hover {
     background-color: hsl(140, 65%, 72%);
+}
+
+:root[theme="dark"] .nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }

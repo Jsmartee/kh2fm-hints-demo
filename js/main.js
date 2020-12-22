@@ -58,16 +58,6 @@ function start() {
     document.getElementById('100 Acre Wood').checked = true;
     document.getElementById('Atlantica').checked = false;
 }
-
-function showInfo() {
-    document.getElementById('info').style.display = "block";
-    document.getElementById('hide').style.display = "inline";
-}
-
-function hideInfo() {
-    document.getElementById('info').style.display = "none";
-    document.getElementById('hide').style.display = "none";
-}
   
 function generate() {
     if(dataArray.length === 0) {

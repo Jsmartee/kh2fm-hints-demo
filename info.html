@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KH2FMR Hints Demo | Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>KH2FM Randomizer Hints Demo</h1>
+    
+    <div class="nav">
+        <ul>
+            <li><a href="index.html">Hint Generator</a></li>
+            <li><a class="active" href="info.html">Information</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <label class="switch">
+            <input type="checkbox" id="theme" onclick="toggleTheme(this)">
+            <span class="slider"></span>
+        </label>
+        <p>Dark Theme</p>
+    </div>
+
+    <hr>
+
+    <h3>How To Use The Generator</h3>
+
+    <h5>Generating Hints</h5>
+    <ul>
+        <li>Select the pnach file you got from the randomizer generator website: <a href="https://randomizer.valaxor.com/">KH2FM Randomizer Generator</a></li>
+        <li>You can select different categories of items to be included or excluded from the pool of important checks</li>
+        <li>You can also choose to exclude certain worlds from having hints. This is here so that if you set a world to "Replace" on the randomizer website, you can opt out of getting a useless hint for that world.</li>
+        <li>When all of the settings are the way you want, click "Generate Hints"</li>
+        <li>When you collect a Secret Ansem Report in the game, select the world you found it in and click the corresponding button to reveal the hint</li>
+        <li>You have 3 tries to select the correct world. The button will be disabled after the failed 3rd try</li>
+    </ul>
+
+    <h5>Sharing Hints</h5>
+    <ul>
+        <li>If you and others are playing the same seed and want the same hints, click "Save Hints" and send the text file to everyone else playing the seed.</li>
+        <li>If someone sent a hint text file to you, select that file and click "Upload Hints" to get the same hints they have.</li>
+    </ul>
+
+    <h5>Tracking Hints</h5>
+    <ul>
+        <li>You can use RedBuddha's tracker to track important checks you gather throughout the seed</li>
+        <li>You can also use it to view the hints instead of using the website:</li>
+        <ul>
+            <li>After generating hints, click "Save Hints" in the "Share Hints" section</li>
+            <li>Load the text file into the tracker</li>
+            <li>When you collect a report in the game, place it in the world you found it in and the tracker will display the hint and automatically update the tracker with the hint's information</li>
+        </ul>
+        <li>You can view the tracker here: <a href="https://github.com/TrevorLuckey/KH2Tracker">KH2 Important Checks Tracker</a> and download it here: <a href="https://github.com/TrevorLuckey/KH2Tracker/releases/">Releases</a></li>
+    </ul>
+
+    <hr>
+
+    <h3>About the Generator</h3>
+
+    <h5>Important Checks</h5>
+    <ul>
+        <li>3 proofs</li>
+        <li>Promise Charm (can be excluded)</li>
+        <li>5 drive forms (Final Form can be excluded)</li>
+        <li>4 summons</li>
+        <li>Magic (18 total, Cure can be excluded)</li>
+        <li>5 torn pages (can be excluded)</li>
+        <li>13 ansem reports (can be excluded)</li>
+        <li>Second Chance and Once More (can be excluded, will not be hinted if they are on keyblades)</li>
+    </ul>
+
+    <h5>Worlds/Locations</h5>
+    <ul>
+        <li>Twilight Town</li>
+        <li>Hollow Bastion</li>
+        <li>Agrabah</li>
+        <li>Beast's Castle</li>
+        <li>Disney Castle</li>
+        <li>Drive Forms</li>
+        <li>Halloween Town</li>
+        <li>Land of Dragons</li>
+        <li>Olympus Coliseum</li>
+        <li>Pride Lands</li>
+        <li>Port Royal</li>
+        <li>Space Paranoids</li>
+        <li>Sora's Heart (Levels, can be excluded)</li>
+        <li>The World That Never Was</li>
+        <li>100 Acre Wood (can be excluded)</li>
+        <li>Simulated Twilight Town (can be excluded)</li>
+        <li>Atlantica (can be excluded)</li>
+    </ul>
+
+    <h5>General</h5>
+    <ul>
+        <li>The 3 Garden of Assemblage chests and the 7 Critical Bonus rewards are not included in any world.</li>
+        <li>Disney Castle and Timeless River are combined into "Disney Castle".</li>
+        <li>Cavern of Remembrance is considered part of "Hollow Bastion".</li>
+        <li>Absent Silhouettes and Data Org members are included in their respective worlds.</li>
+        <li>"Sora's Heart" refers to Level Ups.</li>
+        <li>"Heartless Choice" refers to 0 important checks.</li>
+    </ul>
+
+    <h5>Logic</h5>
+    <ul>
+        <li>The worlds/locations with proofs will always be hinted.</li>
+        <li>If a proof is from drive forms, all of the drive forms will be hinted.</li>
+        <li>If a proof is in 100 Acre Wood, all of the torn pages will be hinted.</li>
+        <li>If a proof is in Atlantica, all thunder and magnet spells will be hinted.</li>
+        <li>If the above items are spread out across all 17 locations, the generator will follow this list (from highest to lowest priority):</li>
+        <ul>
+            <li>Proofs > Drive Forms > Torn Pages > Thunder > Magnet</li>
+        </ul>
+        <li>Reports pointing to proofs will be hinted.</li>
+        <ul>
+            <li>Ex: There's a proof in Port Royal. Report 4 points to Port Royal. Report 4 is in Halloween Town. Halloween Town must be hinted by another report.</li>
+            <li>If the priority items above (proofs, forms, pages, and magic) are already taking up all 13 hints, they will be prioritized over these reports. </li>
+            <li>Note: If the reports are on drive forms or in 100 Acre Wood, there is no logic to hint forms or pages as of now.</li>
+        </ul>
+    </ul>
+
+    <h5>Other</h5>
+    <ul>
+        <li>The generator will prevent the hint pointing to Proof of Peace from being on Mushroom XIII.</li>
+        <li>The generator will prevent the hint pointing to Proof of Connection from being on Terra.</li>
+        <li>If Final Form is removed from the important checks pool, the generator will still hint it's location if there's a proof on drive forms.</li>
+        <li>If a world is set to "Vanilla", none of its checks will be recognized by the program. 
+            If that world is hinted, it will come up as a heartless choice and important items will not count towards number of important checks.
+            Reports in worlds set to "Vanilla" will also not display hints as of now.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Contributors, Shoutouts, and Other Projects</h3>
+
+    <h5>Contributors</h5>
+    <ul>
+        <li>Spikevegeta originally came up with this system. Check out his twitch streams here: <a href="https://www.twitch.tv/spikevegeta">Spikevegeta's Twitch</a></li>
+        <li>The design and styling of the website was done entirely by Zax, the creator of the KH2 Randomizer Item Tracker. Check out his work: <a href="https://tracker.zaxu.xyz/">KH2FM Item Tracker</a></li>
+        <li>CrescentRR showed me how to read pnach files and did the painful work of putting together all the codes. Check out his own hint system here: <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a> </li>
+        <li>RedBuddha designed the tracker made to be compatible with this hint system. Check it out here: <a href="https://github.com/TrevorLuckey/KH2Tracker">KH2 Important Checks Tracker</a></li>
+        <li>Valaxor is the creator of the randomizer generator website. Find out how to support him and the project here: <a href="https://randomizer.valaxor.com/#/support">Support the Randomizer</a></li>
+        <li>Sonicshadowsilver2 created the GoA mod, made KH2 Rando possible in the first place, and also contributed a lot of ideas to the logic of this hint system. Check out his twitch streams here: <a href="https://www.twitch.tv/sonicshadowsilver2">Sonicshadowsilver2's Twitch</a></li>
+    </ul>
+
+    <h5>Other Hint Systems</h5>
+    <ul>
+        <li>If you're interested in another type of hint system, check out GoARacle by CrescentRR here: <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a> and download it here: <a href="https://github.com/CrescentRR/GoARacle/releases">Releases</a> <br>
+            Features:</li>
+            <ul>
+                <li>Larger pool of hinted items including several useful abilities</li>
+                <li>Point based system with themed pools of items (Goofy's Choice, Donald's Choice, Riku's Choice, etc.)</li>
+                <li>Anti-cheat system</li>
+                <li>No need for seeded hints</li>
+                <li>In-app checklist to help track collected items</li>
+            </ul>
+    </ul>
+
+    <h5>Rando Rando</h5>
+    <ul>
+        <li>I made a bare bones website to generate random settings for the randomizer. I've had lots of fun with it. If you want to try it out, check it out here: <a href="https://jsmartee.github.io/2fm-rando-rando/">KH2FM Rando Rando</a></li>
+    </ul>
+
+    <hr>
+
+    <footer>
+        <p class="update">Last updated: 12/22/20</p>
+        <p>Report any bugs or problems to Jsmartee#7416 on Discord.</p>
+        <p>Feedback/suggestions are also welcome.</p>
+        <p><a href="https://github.com/Jsmartee/kh2fm-hints-demo">Github Repo</a></p>
+    </footer>
+
+    <script type="text/javascript" src="js/theme.js"></script>
+</body>
+</html>

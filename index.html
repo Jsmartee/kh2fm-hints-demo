@@ -15,12 +15,15 @@
     <body onload="start()">
         <h1>KH2FM Randomizer Hints Demo</h1>
 
-        <p>This hint generator tells you how many important checks are in a world.
-        To see what is considered an important check and more information about this generator, see the information section below.</p>
-        
-        <p>The design and styling of this page was done by Zax, the creator of the KH2FM Randomizer Item Tracker. Check out his work: <a href="https://tracker.zaxu.xyz/">KH2FM Item Tracker</a> <br>
-        Here's another tracker made by RedBuddha designed to be compatible with this hint system: <a href="https://github.com/TrevorLuckey/KH2Tracker">KH2 Important Checks Tracker</a> <br>
-        If you're interested in another type of hint system, check out this generator made by CrescentRR: <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a></p>
+        <div class="nav">
+            <ul>
+                <li><a class="active" href="index.html">Hint Generator</a></li>
+                <li><a href="info.html">Information</a></li>
+                <li><a href="changelog.html">Changelog</a></li>
+              </ul>
+        </div>
+
+        <br>
 
         <div class="row">
             <label class="switch">
@@ -30,92 +33,13 @@
             <p>Dark Theme</p>
         </div>
 
-        <hr>
+        <p>This hint generator tells you how many important checks are in a world.
+        To see what is considered an important check and more information about this generator, see the information page.</p>
 
-        <h4>Information</h4>
-
-        <table>
-            <tr>
-                <td><button id="show" onclick="showInfo()">Show</button></td>
-                <td><button id="hide" onclick="hideInfo()">Hide</button></td>
-            </tr>
-        </table>
-
-        <div id="info">
-
-            <h5>Important Checks</h5>
-            <ul>
-                <li>3 proofs</li>
-                <li>Promise Charm</li>
-                <li>5 drive forms (Final Form can be excluded)</li>
-                <li>4 summons</li>
-                <li>Magic (18 total, Cure can be excluded)</li>
-                <li>5 torn pages (can be excluded)</li>
-                <li>13 ansem reports (can be excluded)</li>
-                <li>Second Chance and Once More (can be excluded, will not be hinted if they are on keyblades)</li>
-            </ul>
-
-            <h5>Worlds/Locations</h5>
-            <ul>
-                <li>Twilight Town</li>
-                <li>Hollow Bastion</li>
-                <li>Agrabah</li>
-                <li>Beast's Castle</li>
-                <li>Disney Castle</li>
-                <li>Drive Forms</li>
-                <li>Halloween Town</li>
-                <li>Land of Dragons</li>
-                <li>Olympus Coliseum</li>
-                <li>Pride Lands</li>
-                <li>Port Royal</li>
-                <li>Space Paranoids</li>
-                <li>Sora's Heart (Levels)</li>
-                <li>The World That Never Was</li>
-                <li>100 Acre Wood (can be excluded)</li>
-                <li>Simulated Twilight Town (can be excluded)</li>
-                <li>Atlantica (can be excluded)</li>
-            </ul>
-
-            <h5>General</h5>
-            <ul>
-                <li>The 3 Garden of Assemblage chests and the 7 Critical Bonus rewards are not included in any world.</li>
-                <li>Disney Castle and Timeless River are combined into "Disney Castle".</li>
-                <li>Cavern of Remembrance is considered part of "Hollow Bastion".</li>
-                <li>Absent Silhouettes and Data Org members are included in their respective worlds.</li>
-                <li>"Sora's Heart" refers to Level Ups.</li>
-                <li>"Heartless Choice" refers to 0 important checks.</li>
-            </ul>
-
-            <h5>Logic</h5>
-            <ul>
-                <li>The worlds/locations with proofs will always be hinted.</li>
-                <li>If a proof is from drive forms, all of the drive forms will be hinted.</li>
-                <li>If a proof is in 100 Acre Wood, all of the torn pages will be hinted.</li>
-                <li>If a proof is in Atlantica, all thunder and magnet spells will be hinted.</li>
-                <li>If the above items are spread out across all 17 locations, the generator will follow this list (from highest to lowest priority):</li>
-                <ul>
-                    <li>Proofs > Drive Forms > Torn Pages > Thunder > Magnet</li>
-                </ul>
-                <li>Reports pointing to proofs will be hinted.</li>
-                <ul>
-                    <li>Ex: There's a proof in Port Royal. Report 4 points to Port Royal. Report 4 is in Halloween Town. Halloween Town must be hinted by another report.</li>
-                    <li>If the priority items above (proofs, forms, pages, and magic) are already taking up all 13 hints, they will be prioritized over these reports. </li>
-                    <li>Note: If the reports are on drive forms or in 100 Acre Wood, there is no logic to hint forms or pages as of now.</li>
-                </ul>
-            </ul>
-
-            <h5>Other</h5>
-            <ul>
-                <li>The generator will prevent the hint pointing to Proof of Peace from being on Mushroom XIII.</li>
-                <li>The generator will prevent the hint pointing to Proof of Connection from being on Terra.</li>
-                <li>If a world is set to "Vanilla", none of its checks will be recognized by the program. 
-                    If that world is hinted, it will come up as a heartless choice and important items will not count towards number of important checks.
-                    Reports in worlds set to "Vanilla" will also not display hints as of now.</li>
-            </ul>
-
-        </div>
-
-        <br>
+        <p>
+            If you're looking for the other hint system, here's the link to the generator made by CrescentRR: 
+                <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a>    
+        </p>
 
         <hr>
 
@@ -135,8 +59,7 @@
 
             <div>
                 <div id="include">
-                    <p>You can select a category of item to include/exclude from the important checks pool. 
-                    <br>(toggled = include : untoggled = exclude)</p>
+                    <p>Important Checks:</p>
 
                     <div class="row">
                         <label class="switch">
@@ -151,7 +74,7 @@
                             <input type="checkbox" id="abilities" onclick="include(this.id)">
                             <span class="slider"></span>
                         </label>
-                        <p>Second Chance & Once More (will not be included in any world's hint if they're on keyblades)</p>
+                        <p>Second Chance & Once More (see info page about keyblades)</p>
                     </div>
 
                     <div class="row">
@@ -188,8 +111,7 @@
                 </div>
 
                 <div id="replace">
-                    <p>You can select a world below to include/exclude it. 
-                    <br>(toggled = include : untoggled = exclude)</p>
+                    <p>Worlds:</p>
                     <div class="row">
                         <label class="switch">
                             <input type="checkbox" checked="true" id="Sora's Heart" onclick="exclude(this.id)"/>
@@ -239,7 +161,7 @@
 
                 <p class="confirm" id="confirmShare">No hints have been generated yet.</p>
 
-                <p id="hintSettings"></p>
+                <p id="hintSettings">Hint settings will be displayed here when the text file is uploaded.</p>
             </div>
         </section>
 
@@ -249,8 +171,7 @@
             (You have 3 tries to select the correct location. The button will be disabled after the failed 3rd try.)
         </p>
 
-        <p>You can also use RedBuddha's tracker to view the hints. After generating hints, press "Save Hints" in the Share Hints section above and load the text file into the tracker.
-            When you collect a report in the game, select the world and place the report there. The tracker will automatically update with the report's information. <br>
+        <p>You can also use RedBuddha's tracker to view the hints:
             <a href="https://github.com/TrevorLuckey/KH2Tracker">KH2 Important Checks Tracker</a></p>
 
         <div id="table">
@@ -664,11 +585,10 @@
         <hr>
 
         <footer>
-            <p class="update">Last updated: 12/16/20</p>
-            <p class="update"><a href="changelog.html">Changelog</a></p>
+            <p class="update">Last updated: 12/22/20</p>
             <p>Report any bugs or problems to Jsmartee#7416 on Discord.</p>
             <p>Feedback/suggestions are also welcome.</p>
-            <p><a href="https://github.com/Jsmartee/kh2fm-hints-demo">Github Repo</a></p>
+            <p><a class="pageLink" href="https://github.com/Jsmartee/kh2fm-hints-demo">Github Repo</a></p>
         </footer>
 
         <script type="text/javascript" src="js/theme.js"></script>
