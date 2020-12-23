@@ -184,27 +184,39 @@ a:visited {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-  }
+}
   
-  .nav li {
+.nav li {
     float: left;
-  }
+}
   
-  .nav li a {
+.nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+}
   
-  .nav li a:hover:not(.active) {
+.nav li a:hover:not(.active) {
     background-color: #111;
-  }
+}
   
-  .nav .active {
+.nav .active {
     background-color: hsl(210, 70%, 60%);
-  }
+}
+
+ol li a:link {
+      color: black;
+}
+
+ol li a:visited {
+    color: black;
+}
+
+ol li a:hover {
+    color: hsl(210, 70%, 54%);
+}
 
 @media screen and (max-width: 450px) {
     section {
@@ -278,4 +290,16 @@ a:visited {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+:root[theme="dark"] ol a:link {
+    color: white;
+}
+
+:root[theme="dark"] ol a:visited {
+    color: white;
+}
+
+:root[theme="dark"] ol li a:hover {
+    color: hsl(210, 70%, 54%);
 }
