@@ -421,6 +421,7 @@ var SP;
 var TWTNW;
 var DF;
 var LU;
+var FreeList;
 
 function createHints() {
     //create list of rewards in world
@@ -549,7 +550,10 @@ function createHints() {
     prioritizeWorld(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
 
+    FreeList = createWorldList(Free);
     var Fcode = Free[Math.floor(Math.random() * 4)];
+    var Fproof = getProofs(FreeList);
+    sortProofLocations(Fproof, FreeList, "Free");
 
     if(DFproof) {
         prioritizeForms();

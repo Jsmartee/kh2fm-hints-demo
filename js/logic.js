@@ -442,7 +442,7 @@ function hintProofReports(worlds) {
                 var priorityWorldIndex = true;
     
                 while(priorityWorldIndex) {
-                    if(!priorityWorlds2.includes(hintedWorlds[index])) {
+                    if(!priorityWorlds2.includes(hintedWorlds[index]) && hintedWorlds[index] != reportProof2 && hintedWorlds[index] != reportProof3) {
                         hintedWorlds[index] = reportProof1;
                         priorityWorldIndex = false;
                         priorityWorlds2.push(reportProof1);
@@ -459,7 +459,7 @@ function hintProofReports(worlds) {
                 var priorityWorldIndex = true;
     
                 while(priorityWorldIndex) {
-                    if(!priorityWorlds2.includes(hintedWorlds[index])) {
+                    if(!priorityWorlds2.includes(hintedWorlds[index]) && hintedWorlds[index] != reportProof1 && hintedWorlds[index] != reportProof3) {
                         hintedWorlds[index] = reportProof2;
                         priorityWorldIndex = false;
                         priorityWorlds2.push(reportProof2);
@@ -475,7 +475,7 @@ function hintProofReports(worlds) {
                 var priorityWorldIndex = true;
     
                 while(priorityWorldIndex) {
-                    if(!priorityWorlds2.includes(hintedWorlds[index])) {
+                    if(!priorityWorlds2.includes(hintedWorlds[index]) && hintedWorlds[index] != reportProof1 && hintedWorlds[index] != reportProof2) {
                         hintedWorlds[index] = reportProof3;
                         priorityWorldIndex = false;
                         priorityWorlds2.push(reportProof3);
