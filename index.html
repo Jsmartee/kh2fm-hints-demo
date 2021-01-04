@@ -12,7 +12,7 @@
         <script type="text/javascript" src="js/codes.js"></script>
         <script type="text/javascript" src="js/FileSaver.js"></script>
     </head>
-    <body onload="start()">
+    <body onload="init()">
         <h1>KH2FM Randomizer Hints Demo</h1>
 
         <div class="nav">
@@ -34,7 +34,8 @@
         </div>
 
         <p>This hint generator tells you how many important checks are in a world.
-        To see what is considered an important check and more information about this generator, see the information page.</p>
+        To see what is considered an important check and more information about this generator, see the information page.<br>
+        Also check here for common questions: <a href="https://jsmartee.github.io/kh2fm-hints-demo/info.html#faq">FAQ</a></p>
 
         <p>
             If you're looking for the other hint system, here's the link to the generator made by CrescentRR: 
@@ -148,7 +149,6 @@
                 <h3>Share Hints</h3>
                 <p>If you're playing the same seed with other people and want the same hints, click the "Save Hints" button. This will save the hints as a text file that you can send to the other players.</p>
 
-                <p>You can also save the hints and upload it to RedBuddha's tracker to have the hints and the tracker in one app.</p>
                 <button id="save-btn" onclick="save()">Save Hints</button>
 
                 <p>Select the hints text file that was sent to you and click "Upload Hints" to get the same hints as the person who generated them.</p>
@@ -585,7 +585,7 @@
         <hr>
 
         <footer>
-            <p class="update">Last updated: 1/1/21</p>
+            <p class="update"></p>
             <p>Report any bugs or problems to Jsmartee#7416 on Discord.</p>
             <p>Feedback/suggestions are also welcome.</p>
             <p><a href="https://github.com/Jsmartee/kh2fm-hints-demo">Github Repo</a></p>

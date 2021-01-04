@@ -6,8 +6,9 @@
     <title>KH2FMR Hints Demo | Info</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
-<body>
+<body onload="update()">
     <h1>KH2FM Randomizer Hints Demo</h1>
     
     <div class="nav">
@@ -45,6 +46,7 @@
             <li><a href="#general">General</a></li>
             <li><a href="#logic">Logic</a></li>
             <li><a href="#other">Other</a></li>
+            <li><a href="#faq">FAQ</a></li>
         </ul>
         <li><a href="#projects">Contributors, Shoutouts, and Other Projects</a></li>
         <ul>
@@ -124,6 +126,8 @@
         <li>Second Chance and Once More (can be excluded, will not be hinted if they are on keyblades)</li>
     </ul>
 
+    <p>48 important checks by default. Adding Second Chance, Once More, and Promise Charm brings it up to 51.</p>
+
     <h5 id="worlds">Worlds/Locations</h5>
     <ul>
         <li>Twilight Town</li>
@@ -144,6 +148,8 @@
         <li>Simulated Twilight Town (can be excluded)</li>
         <li>Atlantica (can be excluded)</li>
     </ul>
+
+    <p>16 worlds by default. Adding Atlantica brings it up to 17.</p>
 
     <h5 id="general">General</h5>
     <ul>
@@ -183,6 +189,45 @@
             Reports in worlds set to "Vanilla" will also not display hints as of now.</li>
     </ul>
 
+    <h5 id="faq">FAQ</h5>
+    <p><b>How do I get the hints in the game?</b></p>
+    <p>The hints don't appear in the game. They are handled externally. You can view them through the website or through one of the important checks trackers.</p>
+
+    <p><b>What counts as an important check?</b></p>
+    <p>By default, 3 proofs, 5 drive forms, 4 summons, all 18 magic, 5 torn pages, and 13 ansem reports for a total of 48 important checks. Second Chance, Once More, and the Promise Charm can all be included as well. Final Form, Cure, Torn Pages, and Ansem Reports can be excluded from the pool.</p>
+
+    <p><b>If Second Chance and Once More are on keyblades, do they count?</b></p>
+    <p>If either of those abilities are on keyblades, they don't count towards any world's important checks total and they won't be hinted.</p>
+
+    <p><b>What world do important checks in one of the 3 chests in GoA count for?</b></p>
+    <p>They don't count for any world. If one of them is a hint, there's a GoA/Critical Extra option to view them.</p>
+
+    <p><b>What world do critical extras given at the start of a Critical Mode seed count for?</b></p>
+    <p>They don't count for any world. If one of them is a hint, there's a GoA/Critical Extra option to view them.</p>
+
+    <p><b>What does "Sora's Heart" mean?</b></p>
+    <p>"Sora's Heart" refers to level up rewards.</p>
+
+    <p><b>What does "Heartless Choice" mean?</b></p>
+    <p>"Heartless Choice" means that world has 0 important checks.</p>
+
+    <p><b>Is Timeless River part of Disney Castle or its own seperate world?</b></p>
+    <p>Timeless River is combined together with Disney Castle.</p>
+
+    <p><b>Is Cavern of Remembrance part of Hollow Bastion or its own seperate world?</b></p>
+    <p>Cavern of Remembrance is considered part of Hollow Bastion.</p>
+
+    <p><b>Is Space Paranoids or 100 Acre Wood considered part of Hollow Bastion since they appear there in the vanilla game?</b></p>
+    <p>No, Space Paranoids and 100 Acre Wood are each their own worlds.</p>
+
+    <p><b>Everytime I upload the seed to the website, I get different hints. Is this normal?</b></p>
+    <p>Yes, the important check numbers are still the same, but the generator shuffles them around each time. In order to guarantee you get the same hints, you need to save the hints
+        and use the text file instead.
+    </p>
+
+    <p><b>Is there a tracker for important checks?</b></p>
+    <p>Yes, you can use one the these trackers to help you track them: <a href="https://jsmartee.github.io/kh2fm-hints-demo/info.html#track_hints">KH2 Important Checks Trackers</a></p>
+
     <hr>
 
     <h3 id="projects">Contributors, Shoutouts, and Other Projects</h3>
@@ -204,6 +249,7 @@
             <ul>
                 <li>Larger pool of hinted items including several useful abilities</li>
                 <li>Point based system with themed pools of items (Goofy's Choice, Donald's Choice, Riku's Choice, etc.)</li>
+                <li>Customizable pools. Able to turn some of them off and able to hide "Path of Light" hints.</li>
                 <li>Anti-cheat system</li>
                 <li>No need for seeded hints</li>
                 <li>In-app checklist to help track collected items</li>
@@ -224,7 +270,7 @@
     <hr>
 
     <footer>
-        <p class="update">Last updated: 1/1/21</p>
+        <p class="update"></p>
         <p>Report any bugs or problems to Jsmartee#7416 on Discord.</p>
         <p>Feedback/suggestions are also welcome.</p>
         <p><a href="https://github.com/Jsmartee/kh2fm-hints-demo">Github Repo</a></p>
