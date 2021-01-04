@@ -97,8 +97,6 @@ function generate() {
         createHints();
         var seedName = dataArray[0].toString().split('');
         seed = seedName[3].concat(seedName[4], seedName[5], seedName[6]);
-
-        console.log(hints);
     }
 }
 
