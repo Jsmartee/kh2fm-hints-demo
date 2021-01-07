@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 1/4/21";
+        updates[i].innerHTML = "Last Updated 1/6/21";
     }
 }
 
@@ -384,7 +384,7 @@ function findLocation(item) {
 }
 
 var proofLocations = ["placeholder1", "placeholder2", "placeholder3"];
-//Sort proof locations
+//List proofs by type
 function sortProofLocations(proof, worldRewards, world) {
     if(proof) {
         if(worldRewards.includes("00000251")) {
