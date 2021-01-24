@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 1/16/21";
+        updates[i].innerHTML = "Last Updated 1/24/21";
     }
 }
 
@@ -70,6 +70,10 @@ function start() {
     document.getElementById('100 Acre Wood').checked = true;
     document.getElementById('Atlantica').checked = false;
 }
+
+function openPopout() {
+    window.open("popout.html", "scrollbars=yes, resizable=yes", "width=600, height=700");
+}
   
 function generate() {
     if(dataArray.length === 0) {
@@ -105,7 +109,7 @@ function save() {
     saveAs(blob, "kh2fm-hints-" + seed + ".txt");
 }
 
-function uploadHints() {
+function uploadHints(id) {
     var row = dataArray[0].toString().split('.');
     row.pop();
     for(var i = 0; i < row.length; i++) {
@@ -132,21 +136,28 @@ function uploadHints() {
         }
     }
 
-    document.getElementById("upload-btn").classList.add("success");
-    document.getElementById('upload-btn').disabled = true;
-    document.getElementById('gen').disabled = true;
-    document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
-    document.getElementById('confirmGen').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
-    document.getElementById('promisecharm').disabled = true;
-    document.getElementById('page').disabled = true;
-    document.getElementById('report').disabled = true;
-    document.getElementById('abilities').disabled = true;
-    document.getElementById('final').disabled = true;
-    document.getElementById('cure').disabled = true;
-    document.getElementById("Sora's Heart").disabled = true;
-    document.getElementById('Simulated Twilight Town').disabled = true;
-    document.getElementById('100 Acre Wood').disabled = true;
-    document.getElementById('Atlantica').disabled = true;
+    if(id = "popout-upload-btn") {
+        document.getElementById("popout-upload-btn").classList.add("success");
+        document.getElementById('popout-upload-btn').disabled = true;
+    }
+    else {
+        document.getElementById("upload-btn").classList.add("success");
+        document.getElementById('upload-btn').disabled = true;
+        document.getElementById('gen').disabled = true;
+        document.getElementById('confirmShare').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
+        document.getElementById('confirmGen').innerHTML = "Hints have been uploaded! To play another seed, refresh the page.";
+        document.getElementById('promisecharm').disabled = true;
+        document.getElementById('page').disabled = true;
+        document.getElementById('report').disabled = true;
+        document.getElementById('abilities').disabled = true;
+        document.getElementById('final').disabled = true;
+        document.getElementById('cure').disabled = true;
+        document.getElementById("Sora's Heart").disabled = true;
+        document.getElementById('Simulated Twilight Town').disabled = true;
+        document.getElementById('100 Acre Wood').disabled = true;
+        document.getElementById('Atlantica').disabled = true;
+    }
+
     for(var i = 1; i < 14; i++) {
         document.getElementById('report-' + i).innerHTML = "Click to reveal hint";
     }

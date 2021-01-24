@@ -52,7 +52,7 @@
                 <input style="display: none" type="file" id="csvFileInput" onchange="handleFiles(this, this.files)" accept=".pnach">
                 <span style="margin-left: 5px" id="seedFile"></span>
                 </p>
-                <p><button id="gen" type="button" onclick="generate()">Generate Hints</button></a>
+                <p><button id="gen" type="button" onclick="generate()">Generate Hints</button></p>
 
             <p class="confirm" id="confirmGen">No hints have been generated yet.</p>
 
@@ -157,7 +157,7 @@
                 <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".txt">
                 <span style="margin-left: 5px"></span>
                 </p>
-                <p><button id="upload-btn" onclick="uploadHints()">Upload Hints</button></p>
+                <p><button id="upload-btn" onclick="uploadHints(this.id)">Upload Hints</button></p>
 
                 <p class="confirm" id="confirmShare">No hints have been generated yet.</p>
 
@@ -173,6 +173,8 @@
 
         <p>You can also use any of these trackers to view the hints:
             <a href="https://jsmartee.github.io/kh2fm-hints-demo/info.html#track_hints">KH2 Important Checks Trackers</a></p>
+
+        <button id="popout-btn" onclick="openPopout()">Popout Window</button>
 
         <div id="table">
             <table>

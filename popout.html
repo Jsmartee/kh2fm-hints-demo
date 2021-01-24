@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KH2FMR Hints Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/logic.js"></script>
+    <script type="text/javascript" src="js/csv.js"></script>
+    <script type="text/javascript" src="js/codes.js"></script>
+    <script type="text/javascript" src="js/FileSaver.js"></script>
+</head>
+<body onload="start()">
+
+    <div class="row">
+        <label class="switch">
+            <input type="checkbox" id="theme" onclick="toggleTheme(this)">
+            <span class="slider"></span>
+        </label>
+        <p>Dark Theme</p>
+    </div>
+
+    <div class="gen">
+        <p>
+        <button onclick="load(this)">Select Text File</button>
+        <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".txt">
+        <span style="margin-left: 5px"></span>
+        </p>
+        <p><button id="popout-upload-btn" onclick="uploadHints(this.id)">Upload Hints</button></p>
+    
+        <p id="hintSettings">Hint settings will be displayed here when the text file is uploaded.</p>
+    </div>
+
+    <div id="table">
+        <table>
+            <tr>
+                <td>
+                    <button id="1" onclick="reveal(this.id)">Report 1</button>
+                </td>
+                <td>
+                    <select id="report-1-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-1">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="2" onclick="reveal(this.id)">Report 2</button>
+                </td>
+                <td>
+                    <select id="report-2-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-2">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="3" onclick="reveal(this.id)">Report 3</button>
+                </td>
+                <td>
+                    <select id="report-3-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-3">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="4" onclick="reveal(this.id)">Report 4</button>
+                </td>
+                <td>
+                    <select id="report-4-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-4">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="5" onclick="reveal(this.id)">Report 5</button>
+                </td>
+                <td>
+                    <select id="report-5-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-5">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="6" onclick="reveal(this.id)">Report 6</button>
+                </td>
+                <td>
+                    <select id="report-6-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-6">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="7" onclick="reveal(this.id)">Report 7</button>
+                </td>
+                <td>
+                    <select id="report-7-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-7">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="8" onclick="reveal(this.id)">Report 8</button>
+                </td>
+                <td>
+                    <select id="report-8-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-8">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="9" onclick="reveal(this.id)">Report 9</button>
+                </td>
+                <td>
+                    <select id="report-9-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-9">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="10" onclick="reveal(this.id)">Report 10</button>
+                </td>
+                <td>
+                    <select id="report-10-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-10">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="11" onclick="reveal(this.id)">Report 11</button>
+                </td>
+                <td>
+                    <select id="report-11-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-11">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="12" onclick="reveal(this.id)">Report 12</button>
+                </td>
+                <td>
+                    <select id="report-12-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-12">Click to reveal hint</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="13" onclick="reveal(this.id)">Report 13</button>
+                </td>
+                <td>
+                    <select id="report-13-location">
+                        <option value="Not Found Yet">Not Found Yet</option>
+                        <option value="Twilight Town">Twilight Town</option>
+                        <option value="Hollow Bastion">Hollow Bastion</option>
+                        <option value="Agrabah">Agrabah</option>
+                        <option value="Beast's Castle">Beast's Castle</option>
+                        <option value="Disney Castle">Disney Castle</option>
+                        <option value="Drive Forms">Drive Forms</option>
+                        <option value="Halloween Town">Halloween Town</option>
+                        <option value="Land of Dragons">Land of Dragons</option>
+                        <option value="Sora's Heart">Levels</option>
+                        <option value="Olympus Coliseum">Olympus Coliseum</option>
+                        <option value="Port Royal">Port Royal</option>
+                        <option value="Pride Lands">Pride Lands</option>
+                        <option value="Space Paranoids">Space Paranoids</option>
+                        <option value="The World That Never Was">TWTNW</option>
+                        <option value="Free">GoA/Critical Extra</option>
+                        <option value="Simulated Twilight Town">Simulated Twilight Town</option>
+                        <option value="100 Acre Wood">100 Acre Wood</option>
+                        <option value="Atlantica">Atlantica</option>
+                    </select>
+                </td>
+                <td>
+                    <p id="report-13">Click to reveal hint</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="js/theme.js"></script>
+</body>
+</html>

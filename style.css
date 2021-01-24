@@ -63,13 +63,13 @@ button:hover {
     transform: translateY(-2px);
 }
 
-.gen button {
+.gen button, #popout-btn {
     background-color: hsl(210, 70%, 60%);
     color: white;
     box-shadow: 0 2px 4px hsla(210, 70%, 60%, 0.5);
 }
 
-.gen button:hover {
+.gen button:hover, #popout-btn:hover {
     background-color: hsl(210, 70%, 54%);
 }
 
