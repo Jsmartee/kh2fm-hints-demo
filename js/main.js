@@ -109,7 +109,7 @@ function save() {
     saveAs(blob, "kh2fm-hints-" + seed + ".txt");
 }
 
-function uploadHints(id) {
+function uploadHints(button) {
     var row = dataArray[0].toString().split('.');
     row.pop();
     for(var i = 0; i < row.length; i++) {
@@ -136,11 +136,7 @@ function uploadHints(id) {
         }
     }
 
-    if(id = "popout-upload-btn") {
-        document.getElementById("popout-upload-btn").classList.add("success");
-        document.getElementById('popout-upload-btn').disabled = true;
-    }
-    else {
+    if(document.getElementById(button).id === "upload-btn") {
         document.getElementById("upload-btn").classList.add("success");
         document.getElementById('upload-btn').disabled = true;
         document.getElementById('gen').disabled = true;
@@ -156,6 +152,10 @@ function uploadHints(id) {
         document.getElementById('Simulated Twilight Town').disabled = true;
         document.getElementById('100 Acre Wood').disabled = true;
         document.getElementById('Atlantica').disabled = true;
+    }
+    else {
+        document.getElementById("popout-upload-btn").classList.add("success");
+        document.getElementById('popout-upload-btn').disabled = true;
     }
 
     for(var i = 1; i < 14; i++) {
