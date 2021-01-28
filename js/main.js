@@ -173,10 +173,6 @@ function uploadHints(button) {
     }
 
     document.getElementById("hintSettings").innerHTML = dataArray[2].toString();
-
-    console.log(hints);
-        console.log(reportLocations);
-        console.log(proofLocations);
 }
 
 function shuffle(array) {
