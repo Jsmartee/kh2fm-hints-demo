@@ -172,8 +172,6 @@ function uploadHints(button) {
     }
 
     document.getElementById("hintSettings").innerHTML = dataArray[2].toString();
-    console.log(proofLocations);
-    console.log(priorityWorlds);
 }
 
 function shuffle(array) {
