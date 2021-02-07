@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 1/28/21";
+        updates[i].innerHTML = "Last Updated 2/6/21";
     }
 }
 
@@ -70,7 +70,7 @@ function start() {
     document.getElementById('100 Acre Wood').checked = true;
     document.getElementById('Atlantica').checked = false;
 
-    document.getElementById('save-btn').disabled = true;
+    //document.getElementById('save-btn').disabled = true;
 }
 
 function openPopout() {
@@ -109,8 +109,7 @@ function generate() {
         else {
             seed = seedName[3].concat(seedName[4], seedName[5], seedName[6]);
         }
-
-        document.getElementById('save-btn').disabled = false;
+        //document.getElementById('save-btn').disabled = false;
     }
 }
 
@@ -173,6 +172,8 @@ function uploadHints(button) {
     }
 
     document.getElementById("hintSettings").innerHTML = dataArray[2].toString();
+    console.log(proofLocations);
+    console.log(priorityWorlds);
 }
 
 function shuffle(array) {
