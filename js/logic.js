@@ -17,6 +17,22 @@ var allworlds = [
     "Sora's Heart"
 ];
 
+var vanillaReports = [
+    "Hollow Bastion",
+    "Twilight Town",
+    "The World That Never Was",
+    "Beast's Castle",
+    "Olympus Coliseum",
+    "Port Royal",
+    "Hollow Bastion",
+    "The World That Never Was",
+    "The World That Never Was",
+    "Twilight Town",
+    "The World That Never Was",
+    "The World That Never Was",
+    "The World That Never Was"
+];
+
 var priorityWorlds = [];
 //Prioritize worlds/locations with proofs and/or drive forms and/or torn pages
 function prioritizeWorld(item, worldName) {

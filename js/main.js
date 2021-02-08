@@ -652,7 +652,11 @@ function createHints() {
 
     //get report locations
     for(var j = 0; j < ansemReports.length; j++) {
-        reportLocations.push(findLocation(ansemReports[j]));
+        var reportPlacement = findLocation(ansemReports[j]);
+        if(reportPlacement === undefined) {
+            reportPlacement = vanillaReports[j];
+        }
+        reportLocations.push(reportPlacement);
     }
 
     //check for connection hint locked on terra or peace hint locked on shroom
