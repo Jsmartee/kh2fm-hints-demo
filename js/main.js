@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 2/13/21";
+        updates[i].innerHTML = "Last Updated 2/14/21";
     }
 }
 
