@@ -147,21 +147,21 @@
 
             <div class="gen">
                 <h3>Share Hints</h3>
-                <p>If you're playing the same seed with other people and want the same hints, click the "Save Hints" button. This will save the hints as a text file that you can send to the other players.</p>
+                <p>If you're playing the same seed with other people and want the same hints, click the "Save Hints" button. This will save the hints as a file that you can send to the other players.</p>
 
                 <button id="save-btn" onclick="save()">Save Hints</button>
 
-                <p>Select the hints text file that was sent to you and click "Upload Hints" to get the same hints as the person who generated them.</p>
+                <p>Select the hint file that was sent to you and click "Upload Hints" to get the same hints as the person who generated them.</p>
                 <p>
-                <button onclick="load(this)">Select Text File</button>
-                <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".txt">
+                <button onclick="load(this)">Select Hint File</button>
+                <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".hint">
                 <span style="margin-left: 5px"></span>
                 </p>
                 <p><button id="upload-btn" onclick="uploadHints(this.id)">Upload Hints</button></p>
 
                 <p class="confirm" id="confirmShare">No hints have been generated yet.</p>
 
-                <p id="hintSettings">Hint settings will be displayed here when the text file is uploaded.</p>
+                <p id="hintSettings">Hint settings will be displayed here when the file is uploaded.</p>
             </div>
         </section>
 

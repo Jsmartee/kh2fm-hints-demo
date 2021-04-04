@@ -24,13 +24,13 @@
 
     <div class="gen">
         <p>
-        <button onclick="load(this)">Select Text File</button>
-        <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".txt">
+        <button onclick="load(this)">Select Hint File</button>
+        <input style="display: none" type="file" id="textFileInput" onchange="handleFiles(this, this.files)" accept=".hint">
         <span style="margin-left: 5px"></span>
         </p>
         <p><button id="popout-upload-btn" onclick="uploadHints(this.id)">Upload Hints</button></p>
     
-        <p id="hintSettings">Hint settings will be displayed here when the text file is uploaded.</p>
+        <p id="hintSettings">Hint settings will be displayed here when the file is uploaded.</p>
     </div>
 
     <div id="table">

@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 2/14/21";
+        updates[i].innerHTML = "Last Updated 4/4/21";
     }
 }
 
@@ -115,7 +115,7 @@ function generate() {
 
 function save() {
     var blob = new Blob(savedhints, {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "kh2fm-hints-" + seed + ".txt");
+    saveAs(blob, "kh2fm-hints-" + seed + ".hint");
 }
 
 function uploadHints(button) {
