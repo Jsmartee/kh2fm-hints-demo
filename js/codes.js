@@ -718,3 +718,32 @@ var Levels = [
     "11D0BCC0",
     "11D0BCD0"
 ]
+
+//Vanilla checks
+
+var vanillaHollowBastion = [
+    "11CDFFD6",
+    "11CDFFFA",
+    "21D10E98",
+    "21D10BA8",
+    "11CE06A2",
+    "11CE0702",
+    "11CE080A",
+    "11CE0822",
+    "11CE09A2",
+    "11CE09EA"
+]
+
+var vanillaOlympusColiseum = [
+    "21D10858",
+    "11CE09D2"
+]
+
+var vanillaDisneyCastle = [
+    "11CDFA06"
+]
+
+var vanillaTimelessRiver = [
+    "21D109B8",
+    "11CE0762"
+]

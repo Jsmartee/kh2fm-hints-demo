@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 4/4/21";
+        updates[i].innerHTML = "Last Updated 4/19/21";
     }
 }
 
@@ -470,12 +470,26 @@ function createHints() {
     prioritizeWorld(AWproof, "100 Acre Wood");
     var AWnumber = numberOfChecks(AW);
 
+    //vanilla check
+    if(AW.length === 0) {
+        if(keyItems.includes("00000018")) {
+            AW.push("00000018");
+            AWnumber++;
+        }
+    }
+
     AT = createWorldList(Atlantica);
     var ATcode = Atlantica[Math.floor(Math.random() * 4)];
     var ATproof = getProofs(AT);
     sortProofLocations(ATproof, AT, "Atlantica");
     prioritizeWorld(ATproof, "Atlantica");
     var ATnumber = numberOfChecks(AT);
+
+    //vanilla check
+    if(AT.length === 0) {
+        AT.push("00000016");
+        ATnumber++;
+    }
 
     STT = createWorldList(SimulatedTwilightTown);
     var STTcode = SimulatedTwilightTown[Math.floor(Math.random() * 4)];
@@ -491,12 +505,48 @@ function createHints() {
     prioritizeWorld(TTproof, "Twilight Town");
     var TTnumber = numberOfChecks(TT);
 
+    //vanilla check
+    if(TT.length === 0) {
+        if(keyItems.includes("000000E3")) {
+            TT.push("000000E3");
+            TT.push("000000EB");
+            TTnumber = TTnumber + 2;
+        }
+        TT.push("0000001A");
+        TT.push("00000233");
+        TTnumber = TTnumber + 2;
+    }
+
     HB = createWorldList(HollowBastion);
     var HBcode = HollowBastion[Math.floor(Math.random() * 4)];
     var HBproof = getProofs(HB);
     sortProofLocations(HBproof, HB, "Hollow Bastion");
     prioritizeWorld(HBproof, "Hollow Bastion");
     var HBnumber = numberOfChecks(HB);
+
+    //vanilla check
+    if(!locationList.includes(vanillaHollowBastion[0])) {
+        if(keyItems.includes("000000E2")) {
+            HB.push("000000E2");
+            HB.push("000000E8");
+            HBnumber = HBnumber + 2;
+        }
+        if(keyItems.includes("00000020")) {
+            HB.push("00000020");
+            HBnumber++;
+        }
+        if(keyItems.includes("00000018")) {
+            HB.push("00000018");
+            HBnumber++;
+        }
+        HB.push("00000019");
+        HB.push("0000017F");
+        HB.push("00000015");
+        HB.push("00000016");
+        HB.push("00000016");
+        HB.push("0000001F");
+        HBnumber = HBnumber + 6;
+    }
 
     BC = createWorldList(BeastsCastle);
     var BCcode = BeastsCastle[Math.floor(Math.random() * 4)];
@@ -505,12 +555,36 @@ function createHints() {
     prioritizeWorld(BCproof, "Beast's Castle");
     var BCnumber = numberOfChecks(BC);
 
+    //vanilla check
+    if(BC.length === 0) {
+        if(keyItems.includes("00000018")) {
+            BC.push("00000018");
+            BCnumber++;
+        }
+        if(keyItems.includes("000000E5")) {
+            BC.push("000000E5");
+            BCnumber++;
+        }
+        BC.push("00000058");
+        BCnumber++;
+    }
+
     OC = createWorldList(OlympusColiseum);
     var OCcode = OlympusColiseum[Math.floor(Math.random() * 4)];
     var OCproof = getProofs(OC);
     sortProofLocations(OCproof, OC, "Olympus Coliseum");
     prioritizeWorld(OCproof, "Olympus Coliseum");
     var OCnumber = numberOfChecks(OC);
+
+    //vanilla check
+    if(!locationList.includes(vanillaOlympusColiseum[0])) {
+        if(keyItems.includes("000000E6")) {
+            OC.push("000000E6");
+            OCnumber++;
+        }
+        OC.push("00000017");
+        OCnumber++
+    }
 
     AG = createWorldList(Agrabah);
     var AGcode = Agrabah[Math.floor(Math.random() * 4)];
@@ -519,12 +593,33 @@ function createHints() {
     prioritizeWorld(AGproof, "Agrabah");
     var AGnumber = numberOfChecks(AG);
 
+    //vanilla check
+    if(AG.length === 0) {
+        if(keyItems.includes("00000020")) {
+            AG.push("00000020");
+            AGnumber++;
+        }
+        AG.push("00000015");
+        AG.push("0000009F");
+        AGnumber = AGnumber + 2;
+    }
+
     LOD = createWorldList(LandOfDragons);
     var LODcode = LandOfDragons[Math.floor(Math.random() * 4)];
     var LODproof = getProofs(LOD);
     sortProofLocations(LODproof, LOD, "Land of Dragons");
     prioritizeWorld(LODproof, "Land of Dragons");
     var LODnumber = numberOfChecks(LOD);
+
+    //vanilla check
+    if(LOD.length === 0) {
+        if(keyItems.includes("00000020")) {
+            LOD.push("00000020");
+            LODnumber++;
+        }
+        LOD.push("00000017");
+        LODnumber++;
+    }
 
     PL = createWorldList(PrideLands);
     var PLcode = PrideLands[Math.floor(Math.random() * 4)];
@@ -533,12 +628,38 @@ function createHints() {
     prioritizeWorld(PLproof, "Pride Lands");
     var PLnumber = numberOfChecks(PL);
 
+    //vanilla check
+    if(PL.length === 0) {
+        if(keyItems.includes("00000020")) {
+            PL.push("00000020");
+            PLnumber++;
+        }
+        PL.push("00000017");
+        PL.push("00000015");
+        PLnumber = PLnumber + 2;
+    }
+
     DC = createWorldList(DisneyCastle);
     var DCcode = DisneyCastle[Math.floor(Math.random() * 4)];
     var DCproof = getProofs(DC);
     sortProofLocations(DCproof, DC, "Disney Castle");
     prioritizeWorld(DCproof, "Disney Castle");
     var DCnumber = numberOfChecks(DC);
+
+    //vanilla check
+    if(!locationList.includes(vanillaDisneyCastle[0])) {
+        if(keyItems.includes("00000020")) {
+            DC.push("00000020");
+            DCnumber++;
+        }
+    }
+
+    //vanilla check
+    if(!locationList.includes(vanillaTimelessRiver[0])) {
+        DC.push("00000058");
+        DC.push("0000001B");
+        DCnumber = DCnumber + 2;
+    }
 
     HT = createWorldList(HalloweenTown);
     var HTcode = HalloweenTown[Math.floor(Math.random() * 4)];
@@ -547,12 +668,29 @@ function createHints() {
     prioritizeWorld(HTproof, "Halloween Town");
     var HTnumber = numberOfChecks(HT);
 
+    //vanilla check
+    if(HT.length === 0) {
+        HT.push("00000057");
+        HTnumber++;
+    }
+
     PR = createWorldList(PortRoyal);
     var PRcode = PortRoyal[Math.floor(Math.random() * 4)];
     var PRproof = getProofs(PR);
     sortProofLocations(PRproof, PR, "Port Royal");
     prioritizeWorld(PRproof, "Port Royal");
     var PRnumber = numberOfChecks(PR);
+
+    //vanilla check
+    if(PR.length === 0) {
+        if(keyItems.includes("000000E7")) {
+            PR.push("000000E7");
+            PRnumber++;
+        }
+        PR.push("00000057");
+        PR.push("000000A0");
+        PRnumber = PRnumber + 2;
+    }
 
     SP = createWorldList(SpaceParanoids);
     var SPcode = SpaceParanoids[Math.floor(Math.random() * 4)];
@@ -561,12 +699,33 @@ function createHints() {
     prioritizeWorld(SPproof, "Space Paranoids");
     var SPnumber = numberOfChecks(SP);
 
+    //vanilla check
+    if(SP.length === 0) {
+        SP.push("00000058");
+        SPnumber++;
+    }
+
     TWTNW = createWorldList(TheWorldThatNeverWas);
     var TWTNWcode = TheWorldThatNeverWas[Math.floor(Math.random() * 4)];
     var TWTNWproof = getProofs(TWTNW);
     sortProofLocations(TWTNWproof, TWTNW, "The World That Never Was");
     prioritizeWorld(TWTNWproof, "The World That Never Was");
     var TWTNWnumber = numberOfChecks(TWTNW);
+
+    //vanilla check
+    if(TWTNW.length === 0) {
+        if(keyItems.includes("000000E4")) {
+            TWTNW.push("000000E4");
+            TWTNW.push("000000E9");
+            TWTNW.push("000000EA");
+            TWTNW.push("000000EC");
+            TWTNW.push("000000ED");
+            TWTNW.push("000000EE");
+            TWTNWnumber = TWTNWnumber + 6;
+        }
+        TWTNW.push("00000057");
+        TWTNWnumber++;
+    }
 
     DF = createWorldList(Forms);
     var DFcode = Forms[Math.floor(Math.random() * 4)];
@@ -581,6 +740,15 @@ function createHints() {
     sortProofLocations(LUproof, LU, "Sora's Heart");
     prioritizeWorld(LUproof, "Sora's Heart");
     var LUnumber = numberOfChecks(LU);
+
+    //vanilla check
+    if(!locationList.includes(Levels[0])) {
+        if(keyItems.includes("0000019F")) {
+            LU.push("0000019F");
+            LU.push("000001A0");
+            LUnumber = LUnumber + 2;
+        }
+    }
 
     FreeList = createWorldList(Free);
     var Fcode = Free[Math.floor(Math.random() * 4)];
