@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 4/19/21";
+        updates[i].innerHTML = "Last Updated 5/3/21";
     }
 }
 
@@ -742,7 +742,7 @@ function createHints() {
     var LUnumber = numberOfChecks(LU);
 
     //vanilla check
-    if(!locationList.includes(Levels[0])) {
+    if(!locationList.includes("11D0B710")) {
         if(keyItems.includes("0000019F")) {
             LU.push("0000019F");
             LU.push("000001A0");
