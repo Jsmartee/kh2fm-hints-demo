@@ -19,7 +19,7 @@ function init() {
 function update() {
     var updates = document.getElementsByClassName('update');
     for(var i = 0; i < updates.length; i++) {
-        updates[i].innerHTML = "Last Updated 5/3/21";
+        updates[i].innerHTML = "Last Updated 5/11/21";
     }
 }
 
@@ -62,7 +62,7 @@ function start() {
     document.getElementById('promisecharm').checked = false;
     document.getElementById('page').checked = true;
     document.getElementById('report').checked = true;
-    document.getElementById('abilities').checked = false;
+    document.getElementById('abilities').checked = true;
     document.getElementById('final').checked = true;
     document.getElementById('cure').checked = true;
     document.getElementById("Sora's Heart").checked = true;
