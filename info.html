@@ -37,6 +37,7 @@
         <ul>
             <li><a href="#gen_hints">Generating Hints</a></li>
             <li><a href="#share_hints">Sharing Hints</a></li>
+            <li><a href="#openKHgen">OpenKH Generator</a></li>
             <li><a href="#track_hints">Tracking Hints</a></li>
         </ul>
         <li><a href="#about">About the Generator</a></li>
@@ -51,6 +52,7 @@
         <li><a href="#projects">Contributors, Shoutouts, and Other Projects</a></li>
         <ul>
             <li><a href="#shoutouts">Contributors</a></li>
+            <li><a href="#openKH">OpenKH Randomizer Generator</a></li>
             <li><a href="#goaracle">GoARacle</a></li>
             <li><a href="#alternative">Alternative to Hints</a></li>
             <li><a href="#dev">Dev Build</a></li>
@@ -65,8 +67,22 @@
     <h5 id="gen_hints">Generating Hints</h5>
     <ul>
         <li>Select the pnach file you got from the randomizer generator website: <a href="https://randomizer.valaxor.com/">KH2FM Randomizer Generator</a></li>
-        <li>You can select different categories of items to be included or excluded from the pool of important checks</li>
-        <li>You can also choose to exclude certain worlds from having hints. This is here so that if you set a world to "Replace" on the randomizer website, you can opt out of getting a useless hint for that world.</li>
+        <li>Logic Options:</li>
+        <ul>
+            <li>Always Hint Torn Pages: All 5 Torn Pages will be hinted even if there's not a Proof in 100 Acre Wood</li>
+        </ul>
+        <li>Important Checks Options:</li>
+        <ul>
+            <li>You can select different categories of items to be included or excluded from the pool of important checks.</li>
+            <li>Logic will still apply with untoggled pages or forms where if they are turned off, they won't count towards number of important checks, but their locations will still be hinted.
+                See the logic section below.
+            </li>
+        </ul>
+        <li>Worlds Options:</li>
+        <ul>
+            <li>You can choose to exclude certain worlds from having hints. This is here so that if you set a world to "Replace" on the randomizer website, you can opt out of getting a useless hint for that world.</li>
+            <li>If you're playing on Level 1, it's recommended to turn off the Sora's Heart option.</li>
+        </ul>
         <li>When all of the settings are the way you want, click "Generate Hints"</li>
         <li>When you collect a Secret Ansem Report in the game, select the world you found it in and click the corresponding button to reveal the hint</li>
         <li>You have 3 tries to select the correct world. The button will be disabled after the failed 3rd try</li>
@@ -78,15 +94,23 @@
         <li>If someone sent a hint file to you, select that file and click "Upload Hints" to get the same hints they have.</li>
     </ul>
 
+    <h5 id="openKHgen">OpenKH Generator</h5>
+    <ul>
+        <li>This hint system is also available to be used by this generator that was created by Tommadness: <a href="https://kh2-randomizer.herokuapp.com/">OpenKH Randomizer Generator</a></li>
+        <li>Under the "Hint System" option, select "JSmartee" to use this hint system</li>
+        <li>Sharing the Seed Zip File or the link to the seed will allow others to receive the same hints</li>
+    </ul>
+
     <h5 id="track_hints">Tracking Hints</h5>
     <ul>
         <li>Here are trackers to help track important checks you gather throughout the seed</li>
         <ul>
             <li><a href="https://github.com/TrevorLuckey/KH2Tracker">RedBuddha's Tracker</a></li>
                 <ul>
+                    <li>Auto Tracker</li>
                     <li>Able to load hints into it</li>
                     <li>Drag and drop feature</li>
-                    <li>Auto Tracker</li>
+                    <li>Also supports the Altnerative Hints system</li>
                     <li>Download it here: <a href="https://github.com/TrevorLuckey/KH2Tracker/releases/">Releases</a></li>
                 </ul>
             <li><a href="https://github.com/paulblessing/kh2-rando-tracker">equations19's Tracker</a></li>
@@ -252,6 +276,12 @@
         <li>ZakTheRobot contributed to fixing some issues with the logic. Check out his streams here: <a href="https://www.twitch.tv/zaktherobot">ZakTheRobot's Twitch</a></li>
     </ul>
 
+    <h5 id="openKH">OpenKH Randomizer Generator</h5>
+    <ul>
+        <li>Tommadness made a randomizer generator to work with the OpenKH Mod Manager: <a href="https://kh2-randomizer.herokuapp.com/">OpenKH Randomizer Generator</a></li>
+        <li>This hint system can be used directly off the site as an alternative to this one. No need for seeded hints since the generated file will contain the same hints for everyone.</li>
+    </ul>
+
     <h5 id="goaracle">GoARacle</h5>
     <ul>
         <li>If you're interested in another type of hint system, check out GoARacle by CrescentRR here: <a href="https://github.com/CrescentRR/GoARacle">GoARacle</a> and download it here: <a href="https://github.com/CrescentRR/GoARacle/releases">Releases</a> <br>
@@ -266,9 +296,9 @@
             </ul>
     </ul>
 
-    <h5 id="alternative">Altnerative to Hints</h5>
+    <h5 id="alternative">Altnerative Hints</h5>
     <ul>
-        <li>Shananas made an alternative to hints tracker. Download it out here: <a href="https://github.com/shananas/KH2Rando-Alternative-to-Hints-Tracker/releases">Alternative to Hints</a> <br>
+        <li>Shananas made an Altnerative Hints system. It can be used with RedBuddha's tracker that you can download here: <a href="https://github.com/TrevorLuckey/KH2Tracker/releases/">Alternative Hints</a> <br>
         Features:</li>
             <ul>
                 <li>No need for hints. The tracker tells you when a world is done when you find the last important check.</li>
