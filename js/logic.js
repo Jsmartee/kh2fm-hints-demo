@@ -366,8 +366,16 @@ var shroomHint;
 var terraReport;
 var terraHint;
 
+//Check for Reports on Terra and Shroom and check for Self Hinted proofs
 function checkTerraShroomReports(worlds) {
     var hintedWorlds = worlds;
+
+    var selfHint = false;
+    if(document.getElementById('selfHintedWorlds').checked) {
+        if(allReportsInOne() === false) {
+            selfHint = checkSelfHintedWorld(worlds);
+        }
+    }
 
     if(reportLocationCodes.includes("11CE0B16")) {
         terraReport = true;
@@ -398,8 +406,8 @@ function checkTerraShroomReports(worlds) {
         }
     }
 
-    if(terraHint || shroomHint) {
-        while(terraHint || shroomHint) {
+    if(terraHint || shroomHint || selfHint) {
+        while(terraHint || shroomHint || selfHint) {
             hintedWorlds = shuffle(hintedWorlds);
             if(hintedWorlds[indexTerra1] === proofLocations[0] || hintedWorlds[indexTerra2] === proofLocations[0]) {
                 terraHint = true;
@@ -413,7 +421,9 @@ function checkTerraShroomReports(worlds) {
             else {
                 shroomHint = false;
             }
-            console.log("reshuffle");
+            if(selfHint) {
+                selfHint = checkSelfHintedWorld(worlds);
+            }
         }
     }
 
@@ -512,4 +522,37 @@ function hintProofReports(worlds) {
     }
 
     return hintedWorlds;
+}
+
+//Check if all reports are in one world
+function allReportsInOne() {
+    var allReports = false;
+    var number = 0;
+    for(var i = 0; i < reportLocations.length; i++) {
+        if(reportLocations[i] === reportLocations[0]) {
+            number++;
+        }
+    }
+    if(number === 13) {
+        allReports = true;
+    }
+    else {
+        allReports = false;
+    }
+    return allReports;
+}
+
+//Check if any world is self hinted
+function checkSelfHintedWorld(worlds) {
+    var hintedWorlds = worlds;
+
+    var selfHint = false;
+
+    for(var i = 0; i < hintedWorlds.length; i++) {
+        if(reportLocations[i] === hintedWorlds[i]) {
+            selfHint =  true;
+        }
+    }
+
+    return selfHint;
 }
