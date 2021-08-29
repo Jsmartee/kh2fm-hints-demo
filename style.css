@@ -12,6 +12,11 @@ body {
     max-width: 1200px;
 }
 
+#heading {
+    font-size: large;
+    font-weight: bolder;
+}
+
 section {
     display: flex;
     justify-content: center;

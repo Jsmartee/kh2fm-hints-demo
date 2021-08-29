@@ -6,6 +6,7 @@ Based on SpikeVegeta's hint system where each Ansem Report is a hint that tells 
 ## How To Use
 * Go to https://jsmartee.github.io/kh2fm-hints-demo/ to use the hint system.
 * For more information about the generator, go to https://jsmartee.github.io/kh2fm-hints-demo/info.html
+* If you're using the OpenKH generator, the hints are generated on the site with the zip file: https://kh2-randomizer.herokuapp.com/
 
 ## Contributors
 The design of the page was all done by Zax, the creator of the KH2FM Randomizer Item Tracker. Check out his work: [KH2FM Item Tracker](https://tracker.zaxu.xyz/)
